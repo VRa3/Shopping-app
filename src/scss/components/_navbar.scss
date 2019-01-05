@@ -1,0 +1,73 @@
+.navbar {
+  $dark-color: #222;
+  display: flex;
+  flex-direction: column;
+  color: $dark-color;
+  padding: 0.5rem 1rem 1rem 1rem;
+
+  &__logo {
+    display: block;
+    font-size: 2.4rem;
+    font-family: 'Damion';
+    transform: rotate(-3deg);
+    color: inherit;
+  }
+  &__list {
+    position: relative;
+    display: flex;
+    margin: 0;
+    padding: 0 10px;
+    list-style-type: none;
+    font-size: 1.2rem;
+
+    a {
+      color: inherit;
+      
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 30%;
+      height: 3px;
+      background: $dark-color;
+    }
+    &::before {
+      left: -30%;
+    }
+    &::after {
+      right: -30%;
+    }
+
+    &-item {
+      position: relative;
+      margin: 0 10px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        display: block;
+        bottom: 0;
+        width: 100%;
+        height: 2px;
+        background: rgb(224, 210, 49);
+        transition: ease 0.5s;
+        transform: scaleX(0);
+      }
+
+      &:hover{
+        cursor: pointer;
+
+        &::before {
+          transform: scaleX(1);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+.homepage {
+  padding-top: 10%;
+  background: $dark-color;
+  color: #bbb;
+  font-size: 2.5rem;
+  text-align: left;
+  height: 100%;
+
+  &__text {
+    display: block;
+    padding-left: 40%;
+  }
+}

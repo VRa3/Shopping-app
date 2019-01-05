@@ -1,0 +1,18 @@
+.category-item {
+  padding-top: 15px;
+  background: $dark-color-lighter;
+  min-height: 300px;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 95%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 95%, 0% 100%);
+
+  &__name {
+    display: block;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 500;
+  }
+
+  &__img {
+    margin-top: 15px;
+  }
+}
