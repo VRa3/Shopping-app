@@ -16,19 +16,19 @@ self.__precacheManifest = [
     "url": "/Shopping-app/static/js/runtime~main.15c9b73f.js"
   },
   {
-    "revision": "0acc30289bc52c0c962b",
-    "url": "/Shopping-app/static/js/main.0acc3028.chunk.js"
+    "revision": "577cf6f1d5594798246c",
+    "url": "/Shopping-app/static/js/main.577cf6f1.chunk.js"
   },
   {
     "revision": "3dd03f4eced71baf6d3b",
     "url": "/Shopping-app/static/js/1.3dd03f4e.chunk.js"
   },
   {
-    "revision": "0acc30289bc52c0c962b",
+    "revision": "577cf6f1d5594798246c",
     "url": "/Shopping-app/static/css/main.573a2efb.chunk.css"
   },
   {
-    "revision": "ae679e7cc68dfd0404f867ef59db1a1e",
+    "revision": "b60aa44d1e10c49b0a8f8fa632452e24",
     "url": "/Shopping-app/index.html"
   }
 ];
