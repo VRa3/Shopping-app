@@ -5,7 +5,7 @@ class Product extends Component {
         const show = () => console.log(this.props.price);
 
         return (
-            <div onClick={show} className="[ col-xl-4 ]">
+            <div onClick={show} className="[ col-md-4 ]">
                 <div className="category-item">
                         <span className="category-item__name">
                             {this.props.name}

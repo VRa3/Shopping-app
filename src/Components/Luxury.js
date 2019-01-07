@@ -1,26 +1,26 @@
 import React, { Component } from 'react';
-import flower from'../static/fashion/flower-o.jpg';
-import shoes from'../static/fashion/shoes-o.jpg';
-import bag from'../static/fashion/bag-o.jpg';
+import brilliant from'../static/luxury/brilliant.jpg';
+import jewelry from'../static/luxury/jewelry.jpg';
+import perfum from'../static/luxury/perfum.jpg';
 import Product from './Product';
 
-class Fashion extends Component {
+class Luxury extends Component {
     render() {
         const items = [
             {
-                name: 'flower-o',
-                img: flower,
-                price: '409,99'
+                name: 'jewelry',
+                img: jewelry,
+                price: '1379,99'
             },
             {
-                name: 'bag-o',
-                img: bag,
-                price: '329,99'
+                name: 'brilliant',
+                img: brilliant,
+                price: '8409,99'
             },
             {
-                name: 'o-shoes',
-                img: shoes,
-                price: '279,99'
+                name: 'perfum',
+                img: perfum,
+                price: '699,99'
             }
         ];
 
@@ -44,4 +44,4 @@ class Fashion extends Component {
     }
 }
 
-export default Fashion;
+export default Luxury;

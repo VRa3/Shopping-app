@@ -12,26 +12,26 @@ class Navbar extends Component {
             if (item === 'Fashion') {
                 return (
                     <li key={item} className="navbar__list-item">
-                        <Link to={baseUrl + "fashion"}>{item}</Link>
+                        <Link to={baseUrl + "/fashion"}>{item}</Link>
                     </li>
                 )
             } else if ( item === "Cool Stuff") {
                 return (
                     <li key={item} className="navbar__list-item">
-                        <Link to={baseUrl + "cool_stuff"}>{item}</Link>
+                        <Link to={baseUrl + "/cool_stuff"}>{item}</Link>
                     </li>
                 )
             } else if ( item === "Luxury") {
                 return (
                     <li key={item} className="navbar__list-item">
-                        <Link to={baseUrl + "Luxury"}>{item}</Link>
+                        <Link to={baseUrl + "/luxury"}>{item}</Link>
                     </li>
                 )
             }
 
             return (
                 <li key={item} className="navbar__list-item">
-                    <Link to={baseUrl + "test"}>{item}</Link>
+                    <Link to={baseUrl + "/test"}>{item}</Link>
                 </li>
             )
         })
