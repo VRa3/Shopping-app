@@ -6,6 +6,12 @@
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 95%, 0% 100%);
   clip-path: polygon(0 0, 100% 0, 100% 95%, 0% 100%);
 
+  &:hover {
+    .category-item__price-tag {
+      opacity: 1;
+    }
+  }
+
   &__name {
     display: block;
     text-transform: uppercase;
@@ -15,5 +21,33 @@
 
   &__img {
     margin-top: 15px;
+  }
+
+  &__button {
+    position: absolute;
+    top: 70px;
+    right: 30px;
+    border: 0;
+    padding: 15px;
+    background-image: linear-gradient(to right, #e16b2c, #eba012);
+    line-height: 10px;
+    color: #fff;
+    transition: 0.4s ease-in;
+
+    &:hover {
+      cursor: pointer;
+      transform: rotate(180deg);
+    }
+  }
+
+  &__price-tag {
+    position: absolute;
+    left: 15px;
+    bottom: 65px;
+    color: #fff;
+    background: rgba(0,0,0,0.5);
+    width: calc(100% - 30px);
+    opacity: 0;
+    transition: 0.5s ease-in;
   }
 }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Bag from './Bag';
 
 const baseUrl = process.env.PUBLIC_URL;
 
@@ -40,6 +41,7 @@ class Navbar extends Component {
     render() {
         return (
             <header>
+                <Bag />
                 <div className="container">
                     <nav className="navbar">
                         <div>
