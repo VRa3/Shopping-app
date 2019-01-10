@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { selectProduct } from "../Actions";
+import { addProduct } from "../Actions";
 
 class Fashion extends Component {
     generateCards() {
@@ -17,7 +17,7 @@ class Fashion extends Component {
                         <div className="category-item__price-tag">
                             {item.price}
                         </div>
-                        <button onClick={() => this.props.selectProduct(item)} className="category-item__button">
+                        <button onClick={() => this.props.addProduct(item)} className="category-item__button">
                             +
                         </button>
                     </div>
@@ -44,7 +44,8 @@ const mapStateToProps = state => {
         console.log(state);
         return {
             allProducts: state.allProducts,
+            itemsInBag: state.itemsInBag
         };
 };
 
-export default connect(mapStateToProps, {selectProduct})(Fashion);
+export default connect(mapStateToProps, {addProduct})(Fashion);

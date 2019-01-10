@@ -78,10 +78,17 @@ const itemsInBag = () => {
   return itemsInBagArray;
 };
 
+const addProductToBag = (addProduct = null, action) => {
+    if (action.type === 'ADD_PRODUCT') {
+        return itemsInBagArray.push(action.payload);
+    }
 
+    return addProduct;
+};
 
 export default combineReducers({
     allProducts: allProducts,
     selectedProduct: selectProductReducer,
     itemsInBag: itemsInBag,
+    addProductToBag: addProductToBag,
 });
