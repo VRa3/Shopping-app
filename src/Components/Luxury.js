@@ -1,23 +1,38 @@
 import React, { Component } from 'react';
 import Product from './Product';
 import { connect } from 'react-redux';
+import {addProduct} from "../Actions";
 
 class Luxury extends Component {
-    render() {
-        const generateCards = () => {
-            const items = this.props.allProducts.luxury;
-            return items.map( item => {
-                return (
-                    <Product key={item.name} img={item.img} name={item.name} price={item.price}/>
-                )
-            })
-        };
+    generateCards() {
+        const items = this.props.allProducts.luxury;
+        return items.map( item => {
+            return (
+                <div key={item.name} className="[ col-md-4 ]">
+                    <div className="category-item">
+                        <span className="category-item__name">
+                            {item.name}
+                        </span>
+                        <img src={item.img} alt=""
+                             className="img-fluid category-item__img"/>
+                        <div className="category-item__price-tag">
+                            {item.price}
+                        </div>
+                        <button onClick={() => this.props.addProduct(item)} className="category-item__button">
+                            +
+                        </button>
+                    </div>
+                </div>
+            )
+        })
+    };
 
+    render() {
         return (
             <div className="category-wrapper">
                 <div className="container">
                     <div className="row">
-                        {generateCards()}
+                        {this.generateCards()}
                     </div>
                 </div>
             </div>
@@ -26,7 +41,10 @@ class Luxury extends Component {
 }
 
 const mapStateToProps = state => {
-    return state;
+    return {
+        allProducts: state.allProducts,
+        itemsInBag: state.itemsInBag
+    };
 };
 
-export default connect(mapStateToProps)(Luxury);
+export default connect(mapStateToProps, {addProduct})(Luxury);
