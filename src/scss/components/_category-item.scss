@@ -28,7 +28,8 @@
     top: 70px;
     right: 30px;
     border: 0;
-    padding: 15px;
+    border-radius: 50px;
+    padding: 10px;
     background-image: linear-gradient(to right, #e16b2c, #eba012);
     line-height: 10px;
     color: #fff;
@@ -36,7 +37,8 @@
 
     &:hover {
       cursor: pointer;
-      transform: rotate(180deg);
+      border-radius: 0;
+      transform: rotate(180deg) scale(1.25);
     }
   }
 
@@ -48,6 +50,6 @@
     background: rgba(0,0,0,0.5);
     width: calc(100% - 30px);
     opacity: 0;
-    transition: 0.5s ease-in;
+    transition: 0.3s ease-in;
   }
 }

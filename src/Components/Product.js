@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
 
 class Product extends Component {
     render() {
-        const show = () => console.log(this.props.price);
-
         return (
             <div className="[ col-md-4 ]">
                 <div className="category-item">
@@ -15,7 +15,7 @@ class Product extends Component {
                     <div className="category-item__price-tag">
                         {this.props.price}
                     </div>
-                    <button onClick={show} className="category-item__button">
+                    <button className="category-item__button">
                         +
                     </button>
                 </div>
@@ -24,4 +24,8 @@ class Product extends Component {
     }
 }
 
-export default Product;
+const mapStateToProps = (state) => {
+    return state;
+};
+
+export default connect(mapStateToProps)(Product);

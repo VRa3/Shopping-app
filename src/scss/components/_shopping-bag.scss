@@ -1,0 +1,22 @@
+.bag__number {
+  position: absolute;
+  right: 15px;
+  top: 60px;
+  z-index: 10;
+  border: 0;
+  border-radius: 50px;
+  height: 30px;
+  width: 30px;
+  padding: 10px;
+  background-image: linear-gradient(to right, #e16b2c, #eba012);
+  line-height: 10px;
+  color: #fff;
+  transition: 0.4s ease-in;
+}
+
+.shopping-bag {
+  position: absolute;
+  width: 50px;
+  top: 15px;
+  right: 15px;
+}

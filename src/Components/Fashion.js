@@ -1,42 +1,38 @@
 import React, { Component } from 'react';
-import flower from'../static/fashion/flower-o.jpg';
-import shoes from'../static/fashion/shoes-o.jpg';
-import bag from'../static/fashion/bag-o.jpg';
-import Product from './Product';
+import { connect } from 'react-redux';
+import { selectProduct } from "../Actions";
 
 class Fashion extends Component {
+    generateCards() {
+        const items = this.props.allProducts.fashion;
+        return items.map( item => {
+            return (
+                <div key={item.name} className="[ col-md-4 ]">
+                    <div className="category-item">
+                        <span className="category-item__name">
+                            {item.name}
+                        </span>
+                        <img src={item.img} alt=""
+                             className="img-fluid category-item__img"/>
+                        <div className="category-item__price-tag">
+                            {item.price}
+                        </div>
+                        <button onClick={() => this.props.selectProduct(item)} className="category-item__button">
+                            +
+                        </button>
+                    </div>
+                </div>
+            )
+        })
+    };
+
+
     render() {
-        const items = [
-            {
-                name: 'flower-o',
-                img: flower,
-                price: '409,99'
-            },
-            {
-                name: 'bag-o',
-                img: bag,
-                price: '329,99'
-            },
-            {
-                name: 'o-shoes',
-                img: shoes,
-                price: '279,99'
-            }
-        ];
-
-        const generateCards = () => {
-            return items.map( item => {
-                return (
-                    <Product key={item.name} img={item.img} name={item.name} price={item.price}/>
-                )
-            })
-        };
-
         return (
             <div className="category-wrapper">
                 <div className="container">
                     <div className="row">
-                        {generateCards()}
+                        {this.generateCards()}
                     </div>
                 </div>
             </div>
@@ -44,4 +40,11 @@ class Fashion extends Component {
     }
 }
 
-export default Fashion;
+const mapStateToProps = state => {
+        console.log(state);
+        return {
+            allProducts: state.allProducts,
+        };
+};
+
+export default connect(mapStateToProps, {selectProduct})(Fashion);
