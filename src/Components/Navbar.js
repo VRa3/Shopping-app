@@ -39,13 +39,26 @@ class Navbar extends Component {
         })
     }
 
+
+
     render() {
+
+        const collapseMenu = () => {
+            const menu = document.querySelector('.navbar__list');
+            const transition = 500;
+            if (menu) {
+                setTimeout(function(){
+                    menu.classList.toggle('opened');
+                }, transition);
+            }
+        };
+
         return (
             <header>
                 <div className="container">
                     <nav className="navbar">
                         <Bag />
-                        <Link to={baseUrl + "/"} className="navbar__logo show-on-top">
+                        <Link onClick={collapseMenu()} to={baseUrl + "/"} className="navbar__logo show-on-top">
                             Home page
                         </Link>
                         <img src={chevron} className="navbar__chevron show-on-top" alt=""/>
