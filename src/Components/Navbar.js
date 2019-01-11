@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import chevron from '../static/icons/chevron-double-down.svg';
 import Bag from './Bag';
 
 const baseUrl = process.env.PUBLIC_URL;
@@ -41,17 +42,16 @@ class Navbar extends Component {
     render() {
         return (
             <header>
-                <Bag />
                 <div className="container">
                     <nav className="navbar">
-                        <div>
-                            <Link to={baseUrl + "/"} className="navbar__logo">
-                                Home page
-                            </Link>
-                            <ul className="navbar__list">
-                                {this.generateList()}
-                            </ul>
-                        </div>
+                        <Bag />
+                        <Link to={baseUrl + "/"} className="navbar__logo show-on-top">
+                            Home page
+                        </Link>
+                        <img src={chevron} className="navbar__chevron show-on-top" alt=""/>
+                        <ul className="navbar__list">
+                            {this.generateList()}
+                        </ul>
                     </nav>
                 </div>
             </header>

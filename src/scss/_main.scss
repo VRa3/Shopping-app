@@ -4,7 +4,8 @@
 @import "vendors/bootstrap/variables";
 @import "vendors/bootstrap/mixins/breakpoints";
 
-@import "abstracts/_variables.scss";
+@import "abstracts/_variables.scss",
+        "abstracts/_helpers.scss";
 
 @import "base/_base";
 

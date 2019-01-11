@@ -1,24 +1,88 @@
 .navbar {
   $dark-color: #222;
+  position: relative;
+  z-index:1000;
   display: flex;
   flex-direction: column;
   color: $dark-color;
-  padding: 0.5rem 1rem 1rem 1rem;
+  padding: 1rem 0;
+
+  @include media-breakpoint-up(lg) {
+    padding-top: 20px;
+    overflow: hidden;
+  }
 
   &__logo {
     display: block;
-    font-size: 2.4rem;
     font-family: 'Damion';
     transform: rotate(-3deg);
     color: inherit;
+    font-size: 1.6rem;
+
+    @include media-breakpoint-up(lg) {
+      font-size: 2.4rem;
+    }
   }
+
+  &__chevron {
+    width: 22px;
+
+    @include media-breakpoint-up(lg) {
+      display: none;
+    }
+  }
+
   &__list {
-    position: relative;
+    position: absolute;
+    z-index: 10;
+    left: 50%;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     margin: 0;
     padding: 0 10px;
+    background: #fff;
+    width: 100vw;
+    height: calc(100vh - 74px);
+    transition: 1s;
+    transform: translateY(-100%) translateX(-50%);
+    opacity: 0;
     list-style-type: none;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+
+    &.opened {
+      transform: translateY(74px) translateX(-50%);
+      opacity: 1;
+    }
+
+    @include media-breakpoint-up(lg) {
+      display: flex;
+      flex-direction: row;
+      position: relative;
+      left: auto;
+      margin: 20px 0 0 0;
+      width: auto;
+      height: auto;
+      opacity: 1;
+      transform: none;
+
+      &::before, &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 50%;
+        height: 3px;
+        background: $dark-color;
+      }
+      &::before {
+        left: -50%;
+      }
+      &::after {
+        right: -50%;
+      }
+    }
 
     a {
       color: inherit;
@@ -28,26 +92,14 @@
       }
     }
 
-    &::before, &::after {
-      content: '';
-      position: absolute;
-      display: block;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 30%;
-      height: 3px;
-      background: $dark-color;
-    }
-    &::before {
-      left: -30%;
-    }
-    &::after {
-      right: -30%;
-    }
-
     &-item {
       position: relative;
-      margin: 0 10px;
+      margin: 10px;
+      align-self: center;
+
+      @include media-breakpoint-up(lg) {
+        margin: 0 10px;
+      }
 
       &::before {
         content: '';

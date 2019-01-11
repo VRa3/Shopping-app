@@ -1,11 +1,11 @@
 import React from 'react';
-import logo from "../static/shop-bag.png";
+import logo from "../static/icons/shop-bag.png";
 import { connect } from 'react-redux';
 
 const Bag = ({ number }) => {
     if (!number) {
         return (
-            <div className="bag-container">
+            <div className="bag-container show-on-top">
             <span className="bag__number">
                 0
             </span>
@@ -14,7 +14,7 @@ const Bag = ({ number }) => {
         );
     }
     return (
-        <div className="bag-container">
+        <div className="bag-container show-on-top">
             <span className="bag__number">
                 {number}
             </span>

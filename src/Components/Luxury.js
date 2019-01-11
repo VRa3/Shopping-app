@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import Product from './Product';
 import { connect } from 'react-redux';
-import {addProduct} from "../Actions";
+import { addProduct } from "../Actions";
 
 class Luxury extends Component {
     generateCards() {

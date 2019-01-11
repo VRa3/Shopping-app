@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {addProduct} from "../Actions";
+import { addProduct } from "../Actions";
 
 class Cool_stuff extends Component {
     generateCards() {
