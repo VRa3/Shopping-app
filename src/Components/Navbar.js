@@ -45,11 +45,16 @@ class Navbar extends Component {
 
         const collapseMenu = () => {
             const menu = document.querySelector('.navbar__list');
+            const body = document.querySelector('body');
+            const html = document.querySelector('html');
             const transition = 500;
-            if (menu) {
+            if (menu && window.outerWidth < 992) {
                 setTimeout(function(){
-                    menu.classList.toggle('opened');
+                    menu.classList.remove('opened');
+                    body.classList.toggle('no-scroll');
+                    html.classList.toggle('no-scroll');
                 }, transition);
+                console.log(this)
             }
         };
 

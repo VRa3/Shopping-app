@@ -1,27 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addProduct } from "../Actions";
+import Product from "../Components/Product";
 
 class Fashion extends Component {
     generateCards() {
         const items = this.props.allProducts.fashion;
         return items.map( item => {
             return (
-                <div key={item.name} className="[ col-md-4 ]">
-                    <div className="category-item">
-                        <span className="category-item__name">
-                            {item.name}
-                        </span>
-                        <img src={item.img} alt=""
-                             className="img-fluid category-item__img"/>
-                        <div className="category-item__price-tag">
-                            {item.price}
-                        </div>
-                        <button onClick={() => this.props.addProduct(item)} className="category-item__button">
-                            +
-                        </button>
-                    </div>
-                </div>
+                <Product key={item.name} name={item.name} img={item.img} price={item.price} />
             )
         })
     };
@@ -41,10 +28,7 @@ class Fashion extends Component {
 }
 
 const mapStateToProps = state => {
-        return {
-            allProducts: state.allProducts,
-            itemsInBag: state.itemsInBag
-        };
+    return state;
 };
 
-export default connect(mapStateToProps, {addProduct})(Fashion);
+export default connect(mapStateToProps)(Fashion);
