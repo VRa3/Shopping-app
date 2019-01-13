@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addProduct } from "../Actions";
 import Product from "../Components/Product";
 
 class Fashion extends Component {

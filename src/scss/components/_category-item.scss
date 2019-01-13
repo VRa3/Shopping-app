@@ -7,7 +7,7 @@
   clip-path: polygon(0 0, 100% 0, 100% 95%, 0% 100%);
 
   &:hover {
-    .category-item__price-tag {
+    .category-item__price-tag, .category-item__amount-in-bag {
       opacity: 1;
     }
   }
@@ -35,21 +35,57 @@
     color: #fff;
     transition: 0.4s ease-in;
 
-    &:hover {
-      cursor: pointer;
+    @include media-breakpoint-up(lg) {
+      &:hover {
+        cursor: pointer;
+        border-radius: 0;
+        transform: rotate(180deg) scale(1.25);
+      }
+    }
+
+    &.added {
+      background-image: linear-gradient(to right, #0f6b0b, #3ac913);
+      transition: transform 1.4s, opacity 0.5s;
       border-radius: 0;
-      transform: rotate(180deg) scale(1.25);
+      transform: translateY(-100px);
+      opacity: 0;
+
+      @include media-breakpoint-up(lg) {
+        background-image: linear-gradient(to right, #0f6b0b, #3ac913);
+        transition: transform 1.4s, opacity 0.5s;
+        border-radius: 0;
+        transform: translateY(-100px) rotate(180deg);
+        opacity: 0;
+      }
     }
   }
 
   &__price-tag {
     position: absolute;
     left: 15px;
-    bottom: 65px;
+    bottom: 75px;
     color: #fff;
     background: rgba(0,0,0,0.5);
     width: calc(100% - 30px);
-    opacity: 0;
+    opacity: 1;
     transition: 0.3s ease-in;
+
+    @include media-breakpoint-up(lg) {
+      opacity: 0;
+    }
+  }
+  &__amount-in-bag {
+    position: absolute;
+    left: 15px;
+    bottom: 51px;
+    color: #fff;
+    background: rgba(0,0,0,0.5);
+    width: calc(100% - 30px);
+    opacity: 1;
+    transition: 0.3s ease-in;
+
+    @include media-breakpoint-up(lg) {
+      opacity: 0;
+    }
   }
 }

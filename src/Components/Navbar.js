@@ -51,10 +51,9 @@ class Navbar extends Component {
             if (menu && window.outerWidth < 992) {
                 setTimeout(function(){
                     menu.classList.remove('opened');
-                    body.classList.toggle('no-scroll');
-                    html.classList.toggle('no-scroll');
+                    body.classList.remove('no-scroll');
+                    html.classList.remove('no-scroll');
                 }, transition);
-                console.log(this)
             }
         };
 

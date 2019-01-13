@@ -4,13 +4,11 @@ import {addProduct} from "../Actions";
 
 
 class Product extends Component {
-    constructor(props) {
-        super(props);
-
-    }
-
-    animateBuyButton(cos) {
-        cos.classList.add('d-none')
+    animateElement(element) {
+        element.classList.add('added');
+        setTimeout(function(){
+            element.classList.remove('added')
+        }, 2400)
     };
 
     render() {
@@ -28,7 +26,7 @@ class Product extends Component {
                     <button
                         onClick={(event) => {
                             this.props.addProduct();
-                            this.animateBuyButton(event.target);
+                            this.animateElement(event.target);
                             }
                         }
                         className="category-item__button"
@@ -42,6 +40,7 @@ class Product extends Component {
 }
 
 const mapStateToProps = (state) => {
+        console.log(state)
     return {
         allProducts: state.allProducts,
         itemsInBag: state.itemsInBag
