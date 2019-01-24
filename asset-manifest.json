@@ -1,7 +1,7 @@
 {
-  "main.css": "/Shopping-app/static/css/main.c5595803.chunk.css",
-  "main.js": "/Shopping-app/static/js/main.461f7f72.chunk.js",
-  "main.js.map": "/Shopping-app/static/js/main.461f7f72.chunk.js.map",
+  "main.css": "/Shopping-app/static/css/main.d2ae8da7.chunk.css",
+  "main.js": "/Shopping-app/static/js/main.b469a919.chunk.js",
+  "main.js.map": "/Shopping-app/static/js/main.b469a919.chunk.js.map",
   "static/js/1.a7b9bd79.chunk.js": "/Shopping-app/static/js/1.a7b9bd79.chunk.js",
   "static/js/1.a7b9bd79.chunk.js.map": "/Shopping-app/static/js/1.a7b9bd79.chunk.js.map",
   "runtime~main.js": "/Shopping-app/static/js/runtime~main.15c9b73f.js",
@@ -17,8 +17,8 @@
   "static/media/brilliant.jpg": "/Shopping-app/static/media/brilliant.4888f0de.jpg",
   "static/media/perfum.jpg": "/Shopping-app/static/media/perfum.ad748e7c.jpg",
   "static/media/chevron-double-down.svg": "/Shopping-app/static/media/chevron-double-down.f16073bf.svg",
-  "static/css/main.c5595803.chunk.css.map": "/Shopping-app/static/css/main.c5595803.chunk.css.map",
+  "static/css/main.d2ae8da7.chunk.css.map": "/Shopping-app/static/css/main.d2ae8da7.chunk.css.map",
   "index.html": "/Shopping-app/index.html",
-  "precache-manifest.e2a1eb398d2dcc1b5090f7d76bd1c763.js": "/Shopping-app/precache-manifest.e2a1eb398d2dcc1b5090f7d76bd1c763.js",
+  "precache-manifest.0cb8ad4e6809b002d8fe7a7a13ab8820.js": "/Shopping-app/precache-manifest.0cb8ad4e6809b002d8fe7a7a13ab8820.js",
   "service-worker.js": "/Shopping-app/service-worker.js"
 }
