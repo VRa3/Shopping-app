@@ -10,17 +10,17 @@ class Bag extends Component {
 
         const reavealCartContent = () => {
             const cartWrapper = document.querySelector('#cart-wrapper');
-            const body = document.querySelector('body');
+            const html = document.querySelector('html');
             const navbarList = document.querySelector('.navbar__list');
 
             if (cartWrapper.classList.contains('show')) {
                 cartWrapper.classList.remove('show');
-                body.classList.remove('no-scroll');
+                html.classList.remove('no-scroll');
                 return;
             }
 
             cartWrapper.classList.add('show');
-            body.classList.add('no-scroll');
+            html.classList.add('no-scroll');
             navbarList.classList.remove('opened');
         };
 
@@ -49,23 +49,22 @@ class Bag extends Component {
         }
 
         return (
-        <div
-            className='bag-container'
-            onClick={(event) => showBag(event.target)}
-        >
-            <span className='bag__number'>
-                {number}
-            </span>
-            <img
-                onClick={() => {
-                    reavealCartContent();
-                }}
-                className='shopping-bag'
-                src={logo}
-                alt=''
-            />
+        <div className='bag-container' onClick={(event) => showBag(event.target)}>
+            <div className="container position-relative">
+                <span className='bag__number'>
+                    {number}
+                </span>
+                <img
+                    onClick={() => {
+                        reavealCartContent();
+                    }}
+                    className='shopping-bag'
+                    src={logo}
+                    alt=''
+                />
+            </div>
             <div id='cart-wrapper' className='cart-wrapper'>
-                product
+                <p className="cart-wrapper__test">Product</p>
             </div>
         </div>
         )

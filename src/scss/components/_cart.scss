@@ -5,7 +5,7 @@
   z-index: 5;
   min-height: calc(100vh - 92px);
   height: calc(100% - 92px);
-  width: 100%;
+  width: 100vw;
   transform: translateY(94px);
   transition: 1s;
   overflow: hidden;
@@ -14,41 +14,15 @@
   visibility: hidden;
   background: #fff;
 
-  //&::after {
-  //  content: '';
-  //  position: absolute;
-  //  top: -500px;
-  //  right: -500px;
-  //  z-index: 5;
-  //  border-radius: 50%;
-  //  height: 500px;
-  //  width: 500px;
-  //  background: #fff;
-  //  transform: scale(1);
-  //  transition: 4s;
-  //}
-
   @include media-breakpoint-up(lg) {
     top: -42px;
     min-height: calc(100vh - 146px);
-    height: calc(100% - 146px);
+    height: calc(100% - 140px);
   }
 
   &.show {
     opacity: 1;
     visibility: visible;
-    //&::after {
-    //  content: '';
-    //  position: absolute;
-    //  top: 0;
-    //  right: 0;
-    //  z-index: 5;
-    //  border-radius: 50%;
-    //  height: 500px;
-    //  width: 500px;
-    //  background: #fff;
-    //  transform: scale(10);
-    //}
   }
 
   &__test {
