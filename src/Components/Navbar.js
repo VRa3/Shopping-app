@@ -44,12 +44,12 @@ class Navbar extends Component {
     render() {
 
         const collapseMenu = () => {
-            const menu = document.querySelector('.navbar__list');
+            const navbarList = document.querySelector('.navbar__list');
             const body = document.querySelector('body');
             const transition = 500;
-            if (menu && window.outerWidth < 992) {
+            if (navbarList && window.outerWidth < 992) {
                 setTimeout(function(){
-                    menu.classList.remove('opened');
+                    navbarList.classList.remove('opened');
                     body.classList.remove('no-scroll');
                 }, transition);
             }
@@ -59,15 +59,15 @@ class Navbar extends Component {
             <header>
                 <div className="container">
                     <nav className="navbar">
-                        <Bag />
-                        <Link onClick={collapseMenu()} to={baseUrl + "/"} className="navbar__logo">
+                        <Link onClick={collapseMenu()} to={baseUrl + "/"} className="navbar__logo show-on-top">
                             Home page
                         </Link>
-                        <img src={chevron} className="navbar__chevron" alt=""/>
+                        <img src={chevron} className="navbar__chevron show-on-top" alt=""/>
                         <ul className="navbar__list">
                             {this.generateList()}
                         </ul>
                     </nav>
+                    <Bag />
                 </div>
             </header>
         );

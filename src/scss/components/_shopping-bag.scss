@@ -1,18 +1,23 @@
 .bag-container {
   position: absolute;
-  top: 15px;
-  right: 15px;
+  top: 94px;
+  left: 0;
+  width: 100%;
+}
 
-  @include media-breakpoint-up(lg) {
-    top: 30px;
-  }
+.shopping-bag {
+  position: absolute;
+  top: -74px;
+  right: 30px;
+  z-index: 10;
+  width: 50px;
 }
 
 .bag__number {
   position: absolute;
-  right: -15px;
-  bottom: -15px;
-  z-index: 10;
+  top: -34px;
+  right: 15px;
+  z-index: 15;
   border: 0;
   border-radius: 50px;
   height: 30px;
@@ -22,8 +27,4 @@
   line-height: 10px;
   color: #fff;
   transition: 0.4s ease-in;
-}
-
-.shopping-bag {
-  width: 50px;
 }

@@ -7,3 +7,8 @@
   height: 100%;
   overflow: hidden
 }
+
+.show-on-top {
+  position: relative;
+  z-index: 1000;
+}

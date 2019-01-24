@@ -28,19 +28,21 @@ class Bag extends Component {
         if (!number) {
             return (
                 <div className='bag-container'>
-                    <span className='bag__number'>
-                        0
-                    </span>
-                    <img
-                        onClick={() => {
-                            reavealCartContent();
-                        }}
-                        className='shopping-bag'
-                        src={logo}
-                        alt=''
-                    />
+                    <div className="container position-relative">
+                        <span className='bag__number'>
+                            0
+                        </span>
+                        <img
+                            onClick={() => {
+                                reavealCartContent();
+                            }}
+                            className='shopping-bag'
+                            src={logo}
+                            alt=''
+                        />
+                    </div>
                     <div id='cart-wrapper' className='cart-wrapper'>
-                        test
+                        <p className="cart-wrapper__test">Test</p>
                     </div>
                 </div>
             );
