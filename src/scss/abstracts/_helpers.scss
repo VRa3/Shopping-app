@@ -2,13 +2,6 @@
   #HELPERS
 \*------------------------------------*/
 
-.show-on-top {
-  .navbar & {
-    //position: relative;
-    z-index: 10000;
-  }
-}
-
 .no-scroll {
   margin: 0;
   height: 100%;

@@ -1,27 +1,74 @@
-import React from 'react';
-import logo from "../static/icons/shop-bag.png";
+import React, { Component } from 'react';
+import logo from '../static/icons/shop-bag.png';
 import { connect } from 'react-redux';
 
-const Bag = ({ number }) => {
-    if (!number) {
+class Bag extends Component {
+    render() {
+        const showBag = (element) => {
+            console.log(element)
+        };
+
+        const reavealCartContent = () => {
+            const cartWrapper = document.querySelector('#cart-wrapper');
+            const body = document.querySelector('body');
+            const navbarList = document.querySelector('.navbar__list');
+
+            if (cartWrapper.classList.contains('show')) {
+                cartWrapper.classList.remove('show');
+                body.classList.remove('no-scroll');
+                return;
+            }
+
+            cartWrapper.classList.add('show');
+            body.classList.add('no-scroll');
+            navbarList.classList.remove('opened');
+        };
+
+        const number = this.props.number;
+        if (!number) {
+            return (
+                <div className='bag-container'>
+                    <span className='bag__number'>
+                        0
+                    </span>
+                    <img
+                        onClick={() => {
+                            reavealCartContent();
+                        }}
+                        className='shopping-bag'
+                        src={logo}
+                        alt=''
+                    />
+                    <div id='cart-wrapper' className='cart-wrapper'>
+                        test
+                    </div>
+                </div>
+            );
+        }
+
         return (
-            <div className="bag-container show-on-top">
-            <span className="bag__number">
-                0
-            </span>
-                <img className="shopping-bag" src={logo} alt=""/>
-            </div>
-        );
-    }
-    return (
-        <div className="bag-container show-on-top">
-            <span className="bag__number">
+        <div
+            className='bag-container'
+            onClick={(event) => showBag(event.target)}
+        >
+            <span className='bag__number'>
                 {number}
             </span>
-            <img className="shopping-bag" src={logo} alt=""/>
+            <img
+                onClick={() => {
+                    reavealCartContent();
+                }}
+                className='shopping-bag'
+                src={logo}
+                alt=''
+            />
+            <div id='cart-wrapper' className='cart-wrapper'>
+                product
+            </div>
         </div>
-    );
-};
+        )
+    }
+}
 
 const mapStateToProps = state => {
     return {

@@ -40,7 +40,6 @@ class Product extends Component {
 }
 
 const mapStateToProps = (state) => {
-        console.log(state)
     return {
         allProducts: state.allProducts,
         itemsInBag: state.itemsInBag
