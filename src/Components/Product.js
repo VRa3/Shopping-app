@@ -25,7 +25,7 @@ class Product extends Component {
                     </div>
                     <button
                         onClick={(event) => {
-                            this.props.addProduct();
+                            this.props.addProduct(this);
                             this.animateElement(event.target);
                             }
                         }

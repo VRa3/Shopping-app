@@ -31,3 +31,11 @@
     z-index: 10;
   }
 }
+
+.cart-item {
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+  }
+}

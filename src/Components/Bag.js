@@ -4,10 +4,6 @@ import { connect } from 'react-redux';
 
 class Bag extends Component {
     render() {
-        const showBag = (element) => {
-            console.log(element)
-        };
-
         const reavealCartContent = () => {
             const cartWrapper = document.querySelector('#cart-wrapper');
             const body = document.querySelector('body');
@@ -48,8 +44,9 @@ class Bag extends Component {
             );
         }
 
+        const itemsInCart = this.props.itemsInBag;
         return (
-        <div className='bag-container' onClick={(event) => showBag(event.target)}>
+        <div className='bag-container'>
             <div className="container position-relative">
                 <span className='bag__number'>
                     {number}
@@ -64,7 +61,13 @@ class Bag extends Component {
                 />
             </div>
             <div id='cart-wrapper' className='cart-wrapper'>
-                <p className="cart-wrapper__test">Product</p>
+                <div className='cart-item__wrapper'>
+                    <img className='col-6' src={`${itemsInCart[0].props.img}`} alt=""/>
+                    <p className='col-6'>
+                        <span>{itemsInCart[0].props.name}</span>
+                        <span>{itemsInCart[0].props.price}</span>
+                    </p>
+                </div>
             </div>
         </div>
         )
@@ -72,8 +75,10 @@ class Bag extends Component {
 }
 
 const mapStateToProps = state => {
+            console.log(state);
     return {
-        number: state.addProductToBag
+        number: state.addProductToBag,
+        itemsInBag: state.itemsInBag,
     };
 };
 
