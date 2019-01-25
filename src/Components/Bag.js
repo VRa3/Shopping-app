@@ -10,17 +10,17 @@ class Bag extends Component {
 
         const reavealCartContent = () => {
             const cartWrapper = document.querySelector('#cart-wrapper');
-            const html = document.querySelector('html');
+            const body = document.querySelector('body');
             const navbarList = document.querySelector('.navbar__list');
 
             if (cartWrapper.classList.contains('show')) {
                 cartWrapper.classList.remove('show');
-                html.classList.remove('no-scroll');
+                body.classList.remove('no-scroll');
                 return;
             }
 
             cartWrapper.classList.add('show');
-            html.classList.add('no-scroll');
+            body.classList.add('no-scroll');
             navbarList.classList.remove('opened');
         };
 

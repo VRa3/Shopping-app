@@ -46,8 +46,9 @@ class Navbar extends Component {
         const collapseMenu = () => {
             const navbarList = document.querySelector('.navbar__list');
             const body = document.querySelector('body');
+            const documentWidth = document.documentElement.clientWidth;
             const transition = 500;
-            if (navbarList && window.outerWidth < 992) {
+            if (navbarList && documentWidth < 992) {
                 setTimeout(function(){
                     navbarList.classList.remove('opened');
                     body.classList.remove('no-scroll');

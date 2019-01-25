@@ -45,7 +45,7 @@
     background: #fff;
     width: 100vw;
     height: calc(100vh - 96px);
-    transition: 1s;
+    transition: transform 1s;
     transform: translateY(-100%) translateX(-50%);
     list-style-type: none;
     font-size: 1.4rem;
@@ -80,6 +80,10 @@
       }
       &::after {
         right: -50%;
+      }
+
+      *.opened {
+        width: calc(100vw - 17px);
       }
     }
 

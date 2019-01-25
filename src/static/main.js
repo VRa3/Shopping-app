@@ -2,17 +2,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     const collapseMenu = () => {
         const navbarList = document.querySelector('.navbar__list');
-        const html = document.querySelector('html');
+        const body = document.querySelector('body');
         const cartWrapper = document.querySelector('#cart-wrapper');
 
         if (navbarList.classList.contains('opened')) {
             navbarList.classList.remove('opened');
-            html.classList.remove('no-scroll');
+            body.classList.remove('no-scroll');
             return;
         }
 
         navbarList.classList.add('opened');
-        html.classList.add('no-scroll');
+        body.classList.add('no-scroll');
         cartWrapper.classList.remove('show')
     };
 

@@ -6,7 +6,10 @@
   margin: 0;
   height: 100%;
   overflow: hidden;
-  padding-right: 17px;
+
+  @include media-breakpoint-up(lg) {
+    padding-right: 17px;
+  }
 }
 
 .show-on-top {

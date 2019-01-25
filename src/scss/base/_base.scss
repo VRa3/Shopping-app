@@ -4,7 +4,10 @@ body {
 }
 
 html {
-  height: 102%;
+  height: 100%;
+  @include media-breakpoint-up(lg) {
+    height: 102%;
+  }
 }
 
 #root, .App {
