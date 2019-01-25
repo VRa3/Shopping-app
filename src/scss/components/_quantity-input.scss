@@ -1,0 +1,24 @@
+.quantity-input {
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__number {
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    padding: 2px 16px;
+    background: #fff;
+  }
+}
+
+.big-plus-sign,
+.big-minus-sign {
+  background: none;
+  border: none;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 0;
+  margin: 0 10px;
+}

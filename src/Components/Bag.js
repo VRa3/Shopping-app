@@ -62,17 +62,26 @@ class Bag extends Component {
             </div>
             <div id='cart-wrapper' className='cart-wrapper'>
                 <div className="container">
-                    <div className="row">
-
-                    <div className='cart-item__wrapper'>
-                            <img className='col-6 col-lg-4' src={`${itemsInCart[0].props.img}`} alt=""/>
-                            <p className='col-6 offset-lg-4 col-lg-4'>
-                                <span>{itemsInCart[0].props.name} -</span>
+                    <div className="row cart-item__wrapper">
+                        <div className='cart-item'>
+                            <div className='col-6'>
+                                <span className='cart-item__price-tag'>
+                                    {itemsInCart[0].props.name}
+                                </span>
+                                <img className='img-fluid cart-item__img' src={`${itemsInCart[0].props.img}`} alt=""/>
                                 <span> {itemsInCart[0].props.price}$</span>
-                            </p>
+                            </div>
+                            <div className="col-6">
+                                <div className="quantity-input__wrapper">
+                                    <button className="big-plus-sign">+</button>
+                                    <span className="quantity-input__number">
+                                        0
+                                    </span>
+                                    <button className="big-minus-sign">-</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    </div>
-
                 </div>
             </div>
         </div>

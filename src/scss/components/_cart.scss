@@ -33,10 +33,25 @@
 }
 
 .cart-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  font-size: 14px;
+
   &__wrapper {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    font-size: 14px;
+    justify-content: center;
+  }
+
+  &__img {
+    border-radius: 15px;
+  }
+
+  &__price-tag {
+    position: relative;
+    top: 21px;
+    border-radius: 5px;
+    padding: 3px 10px;
+    background: #fff;
+    font-weight: bold;
   }
 }
