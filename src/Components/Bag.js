@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import logo from '../static/icons/shop-bag.png';
 import { connect } from 'react-redux';
+import Bagitem from './Bag-item';
 
 class Bag extends Component {
     render() {
-        const reavealCartContent = () => {
+        const toggleBagView = () => {
             const cartWrapper = document.querySelector('#cart-wrapper');
             const body = document.querySelector('body');
             const navbarList = document.querySelector('.navbar__list');
@@ -30,20 +31,23 @@ class Bag extends Component {
                         </span>
                         <img
                             onClick={() => {
-                                reavealCartContent();
+                                toggleBagView();
                             }}
                             className='shopping-bag'
                             src={logo}
                             alt=''
                         />
                     </div>
-                    <div id='cart-wrapper' className='cart-wrapper'>
-                        <p className="cart-wrapper__test">Test</p>
+                    <div id='cart-wrapper' className='bag-wrapper'>
+                        <p className="bag-wrapper__text">
+                            Your shopping bag is empty
+                        </p>
                     </div>
                 </div>
             );
         }
 
+        // If bag is not empty :
         const itemsInCart = this.props.itemsInBag;
         return (
         <div className='bag-container'>
@@ -53,34 +57,17 @@ class Bag extends Component {
                 </span>
                 <img
                     onClick={() => {
-                        reavealCartContent();
+                        toggleBagView();
                     }}
                     className='shopping-bag'
                     src={logo}
                     alt=''
                 />
             </div>
-            <div id='cart-wrapper' className='cart-wrapper'>
+            <div id='cart-wrapper' className='bag-wrapper'>
                 <div className="container">
-                    <div className="row cart-item__wrapper">
-                        <div className='cart-item'>
-                            <div className='col-6'>
-                                <span className='cart-item__price-tag'>
-                                    {itemsInCart[0].props.name}
-                                </span>
-                                <img className='img-fluid cart-item__img' src={`${itemsInCart[0].props.img}`} alt=""/>
-                                <span> {itemsInCart[0].props.price}$</span>
-                            </div>
-                            <div className="col-6">
-                                <div className="quantity-input__wrapper">
-                                    <button className="big-plus-sign">+</button>
-                                    <span className="quantity-input__number">
-                                        0
-                                    </span>
-                                    <button className="big-minus-sign">-</button>
-                                </div>
-                            </div>
-                        </div>
+                    <div className="row bag-item__wrapper">
+                        <Bagitem />
                     </div>
                 </div>
             </div>
