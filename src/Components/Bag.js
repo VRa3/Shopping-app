@@ -48,7 +48,6 @@ class Bag extends Component {
         }
 
         // If bag is not empty :
-        const itemsInCart = this.props.itemsInBag;
         return (
         <div className='bag-container'>
             <div className="container position-relative">
@@ -66,9 +65,7 @@ class Bag extends Component {
             </div>
             <div id='cart-wrapper' className='bag-wrapper'>
                 <div className="container">
-                    <div className="row bag-item__wrapper">
-                        <Bagitem />
-                    </div>
+                    <Bagitem />
                 </div>
             </div>
         </div>
@@ -77,7 +74,6 @@ class Bag extends Component {
 }
 
 const mapStateToProps = state => {
-            console.log(state);
     return {
         number: state.addProductToBag,
         itemsInBag: state.itemsInBag,
