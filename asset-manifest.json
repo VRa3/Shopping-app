@@ -1,12 +1,12 @@
 {
-  "main.css": "/Shopping-app/static/css/main.26709205.chunk.css",
-  "main.js": "/Shopping-app/static/js/main.d5733d9c.chunk.js",
-  "main.js.map": "/Shopping-app/static/js/main.d5733d9c.chunk.js.map",
+  "main.css": "/Shopping-app/static/css/main.8d667c12.chunk.css",
+  "main.js": "/Shopping-app/static/js/main.b96be712.chunk.js",
+  "main.js.map": "/Shopping-app/static/js/main.b96be712.chunk.js.map",
   "static/js/1.a7b9bd79.chunk.js": "/Shopping-app/static/js/1.a7b9bd79.chunk.js",
   "static/js/1.a7b9bd79.chunk.js.map": "/Shopping-app/static/js/1.a7b9bd79.chunk.js.map",
   "runtime~main.js": "/Shopping-app/static/js/runtime~main.15c9b73f.js",
   "runtime~main.js.map": "/Shopping-app/static/js/runtime~main.15c9b73f.js.map",
-  "static/media/shop-bag.png": "/Shopping-app/static/media/shop-bag.eb577b67.png",
+  "static/media/shop-bag.png": "/Shopping-app/static/media/shop-bag.0d7814df.png",
   "static/media/flower-o.jpg": "/Shopping-app/static/media/flower-o.dc5a299f.jpg",
   "static/media/bag-o.jpg": "/Shopping-app/static/media/bag-o.430dc142.jpg",
   "static/media/shoes-o.jpg": "/Shopping-app/static/media/shoes-o.5f77e987.jpg",
@@ -17,8 +17,8 @@
   "static/media/brilliant.jpg": "/Shopping-app/static/media/brilliant.4888f0de.jpg",
   "static/media/perfum.jpg": "/Shopping-app/static/media/perfum.ad748e7c.jpg",
   "static/media/chevron-double-down.svg": "/Shopping-app/static/media/chevron-double-down.f16073bf.svg",
-  "static/css/main.26709205.chunk.css.map": "/Shopping-app/static/css/main.26709205.chunk.css.map",
+  "static/css/main.8d667c12.chunk.css.map": "/Shopping-app/static/css/main.8d667c12.chunk.css.map",
   "index.html": "/Shopping-app/index.html",
-  "precache-manifest.dd9ef649986d453ac292bfaee3cc022f.js": "/Shopping-app/precache-manifest.dd9ef649986d453ac292bfaee3cc022f.js",
+  "precache-manifest.f354cccce04a60bbccdbf84f95bb675a.js": "/Shopping-app/precache-manifest.f354cccce04a60bbccdbf84f95bb675a.js",
   "service-worker.js": "/Shopping-app/service-worker.js"
 }
