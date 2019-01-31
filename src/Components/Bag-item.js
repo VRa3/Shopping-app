@@ -2,48 +2,69 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 class Bagitem extends Component {
-    generateBagItems() {
-        const itemsInCart = this.props.itemsInBag;
+    constructor(props) {
+        super(props);
 
-        return itemsInCart.map( item => {
-            return (
-                <div className='bag-item'>
-                    <div className='[ col-5 col-sm-3 col-lg-2 ] bag-item__thumb'>
-                        <span className='bag-item__price-tag'>
-                            {item.props.name}
-                        </span>
-                        <img className='img-fluid bag-item__img' src={`${item.props.img}`} alt=""/>
-                        <span> {item.props.price}$</span>
-                    </div>
+        this.state = {
+            quantity: this.props.quantity,
+        }
+    }
 
-                    <div className='[ col-7 col-sm-9 col-lg-10 ] bag-item__utilities-wrapper'>
-                        <div className="row bag-item__utilities">
-                        <div className='[ col-sm-4 col-md-4 ] quantity-input__wrapper'>
-                            <button className='big-plus-sign'>+</button>
-                            <span className='quantity-input__number'>
-                                0
-                            </span>
-                            <button className='big-minus-sign'>-</button>
-                        </div>
+    deleteProduct() {
+        console.log(`${this.props.name} would be deleted`)
+    }
 
-                        <div className='[ col-sm-12 col-md-4 ] bag-item__price-total'>
-                            total for this product: {item.props.price}
-                        </div>
-                        <div className='[ col-sm-4 col-md-4 ] bag-item__delete-product'>
-                            x
-                        </div>
-                        </div>
-                    </div>
-                </div>
-            )
-        })
+    increaseQuantity() {
+        this.setState({quantity: this.state.quantity + 1})
+    }
+
+    decreaseQuantity() {
+        this.setState({quantity: this.state.quantity - 1})
     }
 
     render() {
         return (
-            <div className='bag-item__wrapper'>
-                {this.generateBagItems()}
-            </div>
+                <div className='bag-item'>
+                    <div className='[ col-5 col-sm-3 col-lg-2 ] bag-item__thumb'>
+                        <span className='bag-item__price-tag'>
+                            {this.props.name}
+                        </span>
+                        <img className='img-fluid bag-item__img' src={`${this.props.img}`} alt=""/>
+                        <span> {this.props.price}$</span>
+                    </div>
+
+                    <div className='[ col-7 col-sm-9 col-lg-10 ] bag-item__utilities-wrapper'>
+                        <div className="row bag-item__utilities">
+                            <div className='[ col-sm-4 col-md-4 ] quantity-input__wrapper'>
+                                <button
+                                    className='big-plus-sign'
+                                    onClick={() => this.increaseQuantity()}
+                                >
+                                    +
+                                </button>
+                                <span className='quantity-input__number'>
+                                    {this.state.quantity}
+                                </span>
+                                <button
+                                    className='big-minus-sign'
+                                    onClick={() => this.decreaseQuantity()}
+                                >
+                                    -
+                                </button>
+                            </div>
+
+                            <div className='[ col-sm-12 col-md-5 ] bag-item__price-total'>
+                                total for this product: {(this.props.price * this.state.quantity).toFixed(2)}$
+                            </div>
+                            <div
+                                className='[ col-sm-4 col-md-3 ] bag-item__delete-product'
+                                onClick={() => this.deleteProduct()}
+                            >
+                                x
+                            </div>
+                        </div>
+                    </div>
+                </div>
         )
     }
 }

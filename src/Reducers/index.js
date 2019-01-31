@@ -15,51 +15,51 @@ const allProducts = () => {
             {
                 name: 'flower-o',
                 img: flower,
-                price: '409,99'
+                price: 409.99,
             },
             {
                 name: 'bag-o',
                 img: bag,
-                price: '329,99'
+                price: 329.99,
             },
             {
                 name: 'o-shoes',
                 img: shoes,
-                price: '279,99'
+                price: 279.99,
             }
         ],
         coolStuff: [
             {
                 name: 'a-pad',
                 img: pad,
-                price: '139,99'
+                price: 139.99,
             },
             {
                 name: 'a-cup',
                 img: cup,
-                price: '89,99'
+                price: 89.99,
             },
             {
                 name: 'a-glitter',
                 img: glitter,
-                price: '109,99'
+                price: 109.99,
             }
         ],
         luxury: [
             {
                 name: 'jewelry',
                 img: jewelry,
-                price: '1379,99'
+                price: 1379.99,
             },
             {
                 name: 'brilliant',
                 img: brilliant,
-                price: '8409,99'
+                price: 8409.99,
             },
             {
                 name: 'perfum',
                 img: perfum,
-                price: '699,99'
+                price: 699.99,
             }
         ]
     }

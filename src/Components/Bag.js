@@ -4,6 +4,16 @@ import { connect } from 'react-redux';
 import Bagitem from './Bag-item';
 
 class Bag extends Component {
+    generateBagItems() {
+        const itemsInCart = this.props.itemsInBag;
+
+        return itemsInCart.map( item => {
+            return (
+                <Bagitem key={item.props.name} name={item.props.name} img={item.props.img} quantity={1} price={item.props.price} />
+            )
+        })
+    }
+
     render() {
         const toggleBagView = () => {
             const cartWrapper = document.querySelector('#cart-wrapper');
@@ -65,7 +75,9 @@ class Bag extends Component {
             </div>
             <div id='cart-wrapper' className='bag-wrapper'>
                 <div className="container">
-                    <Bagitem />
+                    <div className='bag-item__wrapper'>
+                        {this.generateBagItems()}
+                    </div>
                 </div>
             </div>
         </div>
