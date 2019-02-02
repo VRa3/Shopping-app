@@ -5,6 +5,35 @@ import Bag from './Bag';
 
 const baseUrl = process.env.PUBLIC_URL;
 
+const collapseMenuHomepage = () => {
+    const navbarList = document.querySelector('.navbar__list');
+    const body = document.querySelector('body');
+    const documentWidth = document.documentElement.clientWidth;
+    const transition = 500;
+    if (navbarList && documentWidth < 992) {
+        setTimeout(function(){
+            navbarList.classList.remove('opened');
+            body.classList.remove('no-scroll');
+        }, transition);
+    }
+};
+
+const collapseMenu = () => {
+    const navbarList = document.querySelector('.navbar__list');
+    const body = document.querySelector('body');
+    const cartWrapper = document.querySelector('#cart-wrapper');
+
+    if (navbarList.classList.contains('opened')) {
+        navbarList.classList.remove('opened');
+        body.classList.remove('no-scroll');
+        return;
+    }
+
+    navbarList.classList.add('opened');
+    body.classList.add('no-scroll');
+    cartWrapper.classList.remove('show')
+};
+
 
 class Navbar extends Component {
     generateList() {
@@ -42,28 +71,18 @@ class Navbar extends Component {
 
 
     render() {
-
-        const collapseMenu = () => {
-            const navbarList = document.querySelector('.navbar__list');
-            const body = document.querySelector('body');
-            const documentWidth = document.documentElement.clientWidth;
-            const transition = 500;
-            if (navbarList && documentWidth < 992) {
-                setTimeout(function(){
-                    navbarList.classList.remove('opened');
-                    body.classList.remove('no-scroll');
-                }, transition);
-            }
-        };
-
         return (
             <header>
                 <div className="container">
                     <nav className="navbar">
-                        <Link onClick={collapseMenu()} to={baseUrl + "/"} className="navbar__logo show-on-top">
+                        <Link onClick={collapseMenuHomepage()} to={baseUrl + "/"} className="navbar__brand-name show-on-top">
                             Home page
                         </Link>
-                        <img src={chevron} className="navbar__chevron show-on-top" alt=""/>
+                        <img
+                            onClick ={() => collapseMenu()}
+                            src={chevron}
+                            className="navbar__chevron show-on-top"
+                            alt=""/>
                         <ul className="navbar__list">
                             {this.generateList()}
                         </ul>

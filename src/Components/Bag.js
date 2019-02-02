@@ -3,6 +3,22 @@ import logo from '../static/icons/shop-bag.png';
 import { connect } from 'react-redux';
 import Bagitem from './Bag-item';
 
+const toggleBagView = () => {
+    const cartWrapper = document.querySelector('#cart-wrapper');
+    const body = document.querySelector('body');
+    const navbarList = document.querySelector('.navbar__list');
+
+    if (cartWrapper.classList.contains('show')) {
+        cartWrapper.classList.remove('show');
+        body.classList.remove('no-scroll');
+        return;
+    }
+
+    cartWrapper.classList.add('show');
+    body.classList.add('no-scroll');
+    navbarList.classList.remove('opened');
+};
+
 class Bag extends Component {
     generateBagItems() {
         const itemsInCart = this.props.itemsInBag;
@@ -15,35 +31,19 @@ class Bag extends Component {
     }
 
     render() {
-        const toggleBagView = () => {
-            const cartWrapper = document.querySelector('#cart-wrapper');
-            const body = document.querySelector('body');
-            const navbarList = document.querySelector('.navbar__list');
-
-            if (cartWrapper.classList.contains('show')) {
-                cartWrapper.classList.remove('show');
-                body.classList.remove('no-scroll');
-                return;
-            }
-
-            cartWrapper.classList.add('show');
-            body.classList.add('no-scroll');
-            navbarList.classList.remove('opened');
-        };
-
         const number = this.props.number;
         if (!number) {
             return (
                 <div className='bag-container'>
                     <div className="container position-relative">
-                        <span className='bag__number'>
+                        <span className='bag-items-counter'>
                             0
                         </span>
                         <img
                             onClick={() => {
                                 toggleBagView();
                             }}
-                            className='shopping-bag'
+                            className='shopping-bag-image'
                             src={logo}
                             alt=''
                         />
@@ -55,33 +55,32 @@ class Bag extends Component {
                     </div>
                 </div>
             );
-        }
-
-        // If bag is not empty :
-        return (
-        <div className='bag-container'>
-            <div className="container position-relative">
-                <span className='bag__number'>
+        } else {
+            return (
+                <div className='bag-container'>
+                    <div className="container position-relative">
+                <span className='bag-items-counter'>
                     {number}
                 </span>
-                <img
-                    onClick={() => {
-                        toggleBagView();
-                    }}
-                    className='shopping-bag'
-                    src={logo}
-                    alt=''
-                />
-            </div>
-            <div id='cart-wrapper' className='bag-wrapper'>
-                <div className="container">
-                    <div className='bag-item__wrapper'>
-                        {this.generateBagItems()}
+                        <img
+                            onClick={() => {
+                                toggleBagView();
+                            }}
+                            className='shopping-bag-image'
+                            src={logo}
+                            alt=''
+                        />
+                    </div>
+                    <div id='cart-wrapper' className='bag-wrapper'>
+                        <div className="container">
+                            <div className='bag-item__wrapper'>
+                                {this.generateBagItems()}
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        )
+            )
+        }
     }
 }
 

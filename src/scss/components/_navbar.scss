@@ -8,20 +8,30 @@
   height: 96px;
 
   @include media-breakpoint-up(lg) {
+    flex-wrap: nowrap;
     padding-top: 20px;
     overflow: hidden;
     height: 146px;
   }
 
-  &__logo {
+  &__brand-name {
     display: block;
-    font-family: 'Damion';
-    transform: rotate(-3deg);
     color: inherit;
+    font-family: 'Damion';
     font-size: 1.6rem;
+    transform: rotate(-3deg) translateZ(0);
+    transition: ease 300ms;
+    backface-visibility: hidden;
+    -webkit-font-smoothing: subpixel-antialiased;
 
     @include media-breakpoint-up(lg) {
       font-size: 2.4rem;
+    }
+
+    &:hover {
+      transform: rotate(-3deg) scale(1.1);
+      color: inherit;
+      text-decoration: none;
     }
   }
 
@@ -111,7 +121,7 @@
         bottom: 0;
         width: 100%;
         height: 2px;
-        background: rgb(224, 210, 49);
+        background: $hover-primary;
         transition: ease 0.5s;
         transform: scaleX(0);
       }
