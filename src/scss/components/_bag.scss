@@ -8,7 +8,7 @@
   position: absolute;
   top: 94px;
   left: 0;
-  width: calc(100vw - 17px);
+  width: calc(100vw - 19px);
 }
 
 .shopping-bag-image {
@@ -46,12 +46,11 @@
 */
 
 .bag-wrapper {
+  display: none;
   position: absolute;
   top: -96px;
   left: 0;
   z-index: 5;
-  display: flex;
-  flex-wrap: wrap;
   min-height: calc(100vh - 92px);
   height: calc(100% - 92px);
   width: 100vw;
@@ -64,13 +63,15 @@
   background: #fff;
 
   @include media-breakpoint-up(lg) {
-    top: -42px;
+    top: -43px;
     min-height: calc(100vh - 146px);
     height: calc(100% - 140px);
     width: calc(100vw - 17px);
   }
 
   &.show {
+    display: flex;
+    flex-wrap: wrap;
     opacity: 1;
     visibility: visible;
     overflow-y: overlay;
