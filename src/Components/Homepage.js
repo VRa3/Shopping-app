@@ -2,23 +2,36 @@ import React, { Component } from 'react';
 import BannerCard from './BannerCard';
 
 class Homepage extends Component {
-    generateCards() {
-        const numbers = [0, 1, 2];
+    constructor(props) {
+        super(props);
 
-        return numbers.map(num => {
-            return <BannerCard ordinalNumber={`0${num}.`} key={num}  />
-        });
+        this.imageRef = React.createRef();
+
+        this.state = {
+            image: this.imageRef.current
+        }
     }
 
+    componentDidMount = () => {
+        this.setState({image: this.imageRef.current})
+    };
 
     render() {
+        const generateCards = () => {
+            const numbers = [0, 1, 2];
+
+            return numbers.map(num => {
+                return <BannerCard ordinalNumber={`0${num}.`} key={num} bannerRef={this.state.image} />
+            });
+        };
+
         return (
             <main className="homepage">
-                <div className="main-baner"></div>
+                <div ref={this.imageRef} className="main-banner"></div>
 
                 <div className="banner-card__wrapper">
                     <div className="container">
-                        {this.generateCards()}
+                        {generateCards()}
                     </div>
                 </div>
 

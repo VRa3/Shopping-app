@@ -70,6 +70,12 @@ class Navbar extends Component {
                         <Link to={baseUrl + "/contact"}>{item}</Link>
                     </li>
                 )
+            } else {
+                return (
+                    <li key={item} className="navbar__list-item">
+                        <Link to={baseUrl + "/contact"}>{item}</Link>
+                    </li>
+                )
             }
         })
     }
@@ -78,7 +84,7 @@ class Navbar extends Component {
 
     render() {
         return (
-            <header class="header">
+            <header className="header">
                 <div className="container">
                     <nav className="navbar">
                         <Link onClick={collapseMenuHomepage()} to={baseUrl + "/"} className="navbar__brand-name show-on-top">

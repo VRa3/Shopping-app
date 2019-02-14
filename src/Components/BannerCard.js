@@ -1,11 +1,27 @@
 import React from 'react';
 
 class BannerCard extends React.Component {
+    animateBg = () => {
+        const banner = this.props.bannerRef;
+
+        banner.classList.add('test');
+    };
+
+    animateBgg = () => {
+        const banner = this.props.bannerRef;
+
+        banner.classList.remove('test');
+    };
+
     render() {
         const { ordinalNumber, heading, caption } = this.props;
 
         return (
-            <div className="banner-card">
+            <div className="banner-card"
+                 onMouseEnter={this.animateBg}
+                 onMouseLeave={this.animateBgg}
+
+            >
                 <div className="banner-card__ordinal-number">
                     {ordinalNumber}
                 </div>

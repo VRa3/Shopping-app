@@ -1,5 +1,5 @@
 .banner-card__wrapper {
-  margin-top: -40px;
+  margin: -40px 0 20px 0;
 
   @include media-breakpoint-up(md) {
     margin-top: -60px;
@@ -13,6 +13,7 @@
 }
 
 .banner-card {
+  position: relative;
   display: flex;
   margin: 0 auto;
   border-radius: 10px 10px 0 0;
@@ -33,7 +34,7 @@
     margin-top: 5px;
     border-radius: 0;
 
-    @include media-breakpoint-up(sm) {
+    @include media-breakpoint-up(md) {
       margin-top: 0;
     }
   }
