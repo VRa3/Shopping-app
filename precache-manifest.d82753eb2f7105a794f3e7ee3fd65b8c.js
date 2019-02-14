@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/Shopping-app/static/media/shoes-o.5f77e987.jpg"
   },
   {
-    "revision": "74f09b108e16145ee3d1",
-    "url": "/Shopping-app/static/css/main.f2e5caa1.chunk.css"
+    "revision": "4fce86371cd4b6be3878",
+    "url": "/Shopping-app/static/css/main.9f51a6e6.chunk.css"
   },
   {
     "revision": "7f7996c828431b470ede",
@@ -32,8 +32,8 @@ self.__precacheManifest = [
     "url": "/Shopping-app/static/media/bag-o.430dc142.jpg"
   },
   {
-    "revision": "74f09b108e16145ee3d1",
-    "url": "/Shopping-app/static/js/main.74f09b10.chunk.js"
+    "revision": "4fce86371cd4b6be3878",
+    "url": "/Shopping-app/static/js/main.4fce8637.chunk.js"
   },
   {
     "revision": "96e777804e75ce7aa8200b1e0a7c4635",
@@ -60,7 +60,11 @@ self.__precacheManifest = [
     "url": "/Shopping-app/static/media/perfum.ad748e7c.jpg"
   },
   {
-    "revision": "1eb2ecee86864f79900fd6e37eb3b469",
+    "revision": "4e4511f36daf62b59d98100ef6ac3929",
+    "url": "/Shopping-app/static/media/angel.4e4511f3.jpg"
+  },
+  {
+    "revision": "b4ad09f264282a3d97b4eb58193f1180",
     "url": "/Shopping-app/index.html"
   }
 ];
