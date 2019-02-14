@@ -58,13 +58,13 @@ class Navbar extends Component {
                         <Link to={baseUrl + "/luxury"}>{item}</Link>
                     </li>
                 )
+            } else if ( item === "Contact") {
+                return (
+                    <li key={item} className="navbar__list-item">
+                        <Link to={baseUrl + "/contact"}>{item}</Link>
+                    </li>
+                )
             }
-
-            return (
-                <li key={item} className="navbar__list-item">
-                    <Link to={baseUrl + "/test"}>{item}</Link>
-                </li>
-            )
         })
     }
 
@@ -72,7 +72,7 @@ class Navbar extends Component {
 
     render() {
         return (
-            <header>
+            <header class="header">
                 <div className="container">
                     <nav className="navbar">
                         <Link onClick={collapseMenuHomepage()} to={baseUrl + "/"} className="navbar__brand-name show-on-top">

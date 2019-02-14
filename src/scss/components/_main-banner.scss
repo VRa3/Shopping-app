@@ -1,0 +1,14 @@
+.main-baner {
+  padding-top: 80%;
+  background-image: url('../static/slider/angel.jpg');
+  background-repeat: no-repeat;
+  background-size: 165%;
+  background-position: 50% top;
+
+  @include media-breakpoint-up(xl) {
+    padding-top: 0;
+    height: calc(100vh - 146px);
+    background-size: cover;
+    background-position: unset;
+  }
+}

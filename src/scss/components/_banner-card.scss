@@ -1,0 +1,52 @@
+.banner-card__wrapper {
+  margin-top: -40px;
+
+  @include media-breakpoint-up(md) {
+    margin-top: -60px;
+    > .container {
+      display: flex;
+    }
+  }
+}
+
+.banner-card {
+  display: flex;
+  margin: 0 auto;
+  border-radius: 10px 10px 0 0;
+  padding: 15px;
+  width: 90%;
+  background: #fff;
+
+  @include media-breakpoint-up(md) {
+    flex: 1 1 auto;
+    border-radius: 0;
+
+    &:not(:last-child) {
+      margin-right: 3px;
+    }
+  }
+
+  & + & {
+    margin-top: 5px;
+    border-radius: 0;
+
+    @include media-breakpoint-up(sm) {
+      margin-top: 0;
+    }
+  }
+
+  &__ordinal-number {
+    margin-right: 15px;
+    line-height: 1;
+    color: inherit;
+    font-size: 32px;
+
+    background-image: url('../static/slider/angel.jpg');
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &__caption {
+    margin-bottom: 0;
+  }
+}

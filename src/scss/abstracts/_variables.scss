@@ -7,6 +7,24 @@ $dark-color-lighter:  rgb(61, 57, 56);
 
 $hover-primary:       rgb(224, 210, 49);
 
+// Scheme of colors
+$color-palette: (
+  gray: (
+    base: rgb(49, 47, 48),
+    light: rgb(61, 57, 56),
+  ),
+  hover: (
+    primary: rgb(224, 210, 49)
+  ),
+  font: (
+    base: rgb(187, 187, 187)
+  )
+);
+
+@function setColor($scheme, $tone: base) {
+  @return map-get(map-get($color-palette, $scheme), $tone);
+}
+
 /*------------------------------------*\
     #MEDIA-QUERIES
 \*------------------------------------*/
