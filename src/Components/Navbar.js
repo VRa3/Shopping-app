@@ -40,7 +40,13 @@ class Navbar extends Component {
         const list = this.props.ulItems;
 
         return list.map(item => {
-            if (item === 'Fashion') {
+            if ( item === "About Us") {
+                return (
+                    <li key={item} className="navbar__list-item">
+                        <Link to={baseUrl + "/Contact"}>{item}</Link>
+                    </li>
+                )
+            } else if (item === 'Fashion') {
                 return (
                     <li key={item} className="navbar__list-item">
                         <Link to={baseUrl + "/fashion"}>{item}</Link>

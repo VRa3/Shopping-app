@@ -24,9 +24,9 @@ class Homepage extends Component {
 
 
                 <div className="container">
-                    <span className="homepage__text">
+                    <p className="homepage__text">
                         What you looking at, choose one of 3 our categories and treat yourself with the best...
-                    </span>
+                    </p>
                 </div>
             </main>
         );

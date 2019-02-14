@@ -7,6 +7,9 @@
       display: flex;
     }
   }
+  @include media-breakpoint-up(xl) {
+    margin-top: -114px;
+  }
 }
 
 .banner-card {

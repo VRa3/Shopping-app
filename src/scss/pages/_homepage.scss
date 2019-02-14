@@ -2,14 +2,11 @@
   font-size: 1rem;
   text-align: left;
   height: 100%;
-
-  @include media-breakpoint-up(lg) {
-    font-size: 2.5rem;
-  }
   &__text {
+    margin-bottom: 0;
     @include media-breakpoint-up(lg) {
-      display: block;
-      padding-left: 40%;
+      padding: 25px 0;
+      font-size: 2.5rem;
     }
   }
 }

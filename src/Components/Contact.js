@@ -5,9 +5,9 @@ class contact extends Component {
         return (
             <main className="homepage">
                 <div className="container">
-                    <span className="homepage__text">
+                    <p className="homepage__text">
                         This is only test page for About/Contact route.
-                    </span>
+                    </p>
                 </div>
             </main>
         );
