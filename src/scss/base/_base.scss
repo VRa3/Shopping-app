@@ -3,6 +3,7 @@ body {
   flex-direction: column;
   min-height: 100%;
   font-family: 'Poppins';
+  font-size: 16px;
 }
 
 html {
@@ -24,7 +25,6 @@ html {
   flex: 1 1 auto;
   background: setColor(gray, base);
   color: setColor(font, base);
-
 }
 
 .content {
@@ -33,4 +33,16 @@ html {
 
 .header {
   background: #fff;
+}
+
+.heading {
+  margin-bottom: 0;
+  padding: 12px 0;
+
+  &--large {
+    @include media-breakpoint-up(lg) {
+      padding: 25px 0;
+      font-size: 2.5rem;
+    }
+  }
 }

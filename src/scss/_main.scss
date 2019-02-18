@@ -5,6 +5,7 @@
 @import "vendors/bootstrap/mixins/breakpoints";
 
 @import "abstracts/_variables.scss",
+        "abstracts/animations",
         "abstracts/_helpers.scss";
 
 @import "base/_base";
@@ -17,5 +18,3 @@
         "components/_main-banner",
         "components/_banner-card",
         "components/_categories";
-
-@import "pages/_homepage";

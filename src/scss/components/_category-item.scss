@@ -5,6 +5,7 @@
   min-height: 300px;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 95%, 0% 100%);
   clip-path: polygon(0 0, 100% 0, 100% 95%, 0% 100%);
+  text-align: center;
 
   &:hover {
     .category-item__price-tag,

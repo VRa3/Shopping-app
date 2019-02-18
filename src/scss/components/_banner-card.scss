@@ -32,7 +32,18 @@
   }
 
   &.selected {
-    transform: translateY(-50px);
+
+    .banner-card__heading {
+      color: #000;
+    }
+
+    @include media-breakpoint-up(md) {
+      transform: translateY(-50px);
+
+      .banner-card__ordinal-number {
+        background-position: 0 -200px;
+      }
+    }
   }
 
   &:hover {
@@ -49,6 +60,7 @@
   }
 
   &__ordinal-number {
+    transition: background-position 500ms;
     margin-right: 15px;
     line-height: 1;
     color: inherit;
@@ -57,6 +69,11 @@
     background-image: url('../static/slider/angel.jpg');
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    background-position: 0 -150px;
+  }
+
+  &__heading {
+    transition: color 500ms;
   }
 
   &__caption {

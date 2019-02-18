@@ -3,9 +3,9 @@ import React, { Component } from 'react';
 class contact extends Component {
     render() {
         return (
-            <main className="homepage">
+            <main>
                 <div className="container">
-                    <p className="homepage__text">
+                    <p className="heading heading--large">
                         This is only test page for About/Contact route.
                     </p>
                 </div>

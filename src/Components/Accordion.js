@@ -8,7 +8,6 @@ class Accordion extends Component {
 
     onCardChange = card => {
       this.setState({selectedCard: card});
-      console.log(this.state.selectedCard);
     };
 
     render() {
@@ -19,15 +18,18 @@ class Accordion extends Component {
                     id: 0,
                     heading: 'Heading One',
                     caption: 'Lorem ipsum dolor sit amet',
+                    bannerText: 'This text is coming from first card',
                 },
                 {
                     id: 1,
                     heading: 'Heading Two',
                     caption: 'Caption text',
+                    bannerText: 'This text is coming from second card',
                 },
                 {
                     id: 2,
                     heading: 'Heading Three',
+                    bannerText: 'This text is coming from third card',
                 }
             ];
 
@@ -35,23 +37,25 @@ class Accordion extends Component {
                 if (this.state.selectedCard === card.id) {
                     return <BannerCard
                             onCardChange={this.onCardChange}
+                            textHolderRef={this.props.textHolder}
                             class='banner-card selected'
-                            ordinalNumber={`0${card.id}.`}
                             key={card.id}
                             id={card.id}
                             heading={card.heading}
                             caption={card.caption}
-                            bannerRef={this.state.image} />
+                            bannerText={card.bannerText}
+                    />
                 } else {
                     return <BannerCard
-                        onCardChange={this.onCardChange}
-                        class='banner-card'
-                        ordinalNumber={`0${card.id}.`}
-                        key={card.id}
-                        id={card.id}
-                        heading={card.heading}
-                        caption={card.caption}
-                        bannerRef={this.state.image} />
+                            onCardChange={this.onCardChange}
+                            textHolderRef={this.props.textHolder}
+                            class='banner-card'
+                            key={card.id}
+                            id={card.id}
+                            heading={card.heading}
+                            caption={card.caption}
+                            bannerText={card.bannerText}
+                    />
                 }
             });
         };
