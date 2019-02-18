@@ -16,7 +16,11 @@
   top: -74px;
   right: 30px;
   z-index: 10;
-  width: 50px;
+  width: 40px;
+
+  @include media-breakpoint-up(lg) {
+    width: 48px;
+  }
 
   &:hover {
     cursor: pointer;
@@ -25,7 +29,7 @@
 
 .bag-items-counter {
   position: absolute;
-  top: -34px;
+  top: -46px;
   right: 15px;
   z-index: 15;
   border: 0;
@@ -37,7 +41,13 @@
   line-height: 10px;
   text-align: center;
   color: #fff;
+  font-size: 12px;
   transition: 0.4s ease-in;
+
+  @include media-breakpoint-up(lg) {
+    font-size: 14px;
+    top: -38px;
+  }
 }
 
 /*
@@ -49,7 +59,7 @@
 .bag-wrapper {
   display: none;
   position: absolute;
-  top: -96px;
+  top: -102px;
   left: 0;
   z-index: 5;
   opacity: 0;
@@ -58,8 +68,8 @@
   transform: translateY(94px);
   transition: transform 1s;
 
-  min-height: calc(100vh - 92px);
-  height: calc(100% - 92px);
+  min-height: calc(100vh - 86px);
+  height: calc(100% - 86px);
   width: 100vw;
   overflow: auto;
 
@@ -68,9 +78,9 @@
   font-size: 40px;
 
   @include media-breakpoint-up(lg) {
-    top: -43px;
-    min-height: calc(100vh - 146px);
-    height: calc(100% - 140px);
+    top: -59px;
+    min-height: calc(100vh - 129px);
+    height: calc(100% - 130px);
     width: calc(100vw - 17px);
   }
 

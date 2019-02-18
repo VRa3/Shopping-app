@@ -4,14 +4,14 @@
   display: flex;
   flex-direction: column;
   color: $dark-color;
-  padding: 1rem 0;
-  height: 96px;
+  padding: 12px 0;
+  height: 86px;
 
   @include media-breakpoint-up(lg) {
     flex-wrap: nowrap;
     padding-top: 20px;
     overflow: hidden;
-    height: 146px;
+    height: auto;
   }
 
   &__brand-name {
@@ -25,7 +25,7 @@
     -webkit-font-smoothing: subpixel-antialiased;
 
     @include media-breakpoint-up(lg) {
-      font-size: 2.4rem;
+      font-size: 2.2rem;
     }
 
     &:hover {
@@ -36,7 +36,7 @@
   }
 
   &__chevron {
-    width: 22px;
+    width: 18px;
 
     @include media-breakpoint-up(lg) {
       display: none;
@@ -46,6 +46,7 @@
   &__list {
     position: absolute;
     z-index: 10;
+    top: 0;
     left: 50%;
     display: flex;
     flex-direction: column;
@@ -54,14 +55,14 @@
     padding: 0 10px;
     background: #fff;
     width: 100vw;
-    height: calc(100vh - 96px);
+    height: calc(100vh - 86px);
     transition: transform 1s;
     transform: translateY(-100%) translateX(-50%);
     list-style-type: none;
     font-size: 1.4rem;
 
     &.opened {
-      transform: translateY(80px) translateX(-50%);
+      transform: translateY(86px) translateX(-50%);
     }
 
     @include media-breakpoint-up(lg) {
@@ -69,7 +70,7 @@
       flex-direction: row;
       position: relative;
       left: auto;
-      margin: 20px 0 0 0;
+      margin: 15px 0 0 0;
       width: auto;
       height: auto;
       opacity: 1;
@@ -81,15 +82,15 @@
         display: block;
         top: 50%;
         transform: translateY(-50%);
-        width: 50%;
+        width: 60%;
         height: 3px;
         background: $dark-color;
       }
       &::before {
-        left: -50%;
+        left: -60%;
       }
       &::after {
-        right: -50%;
+        right: -60%;
       }
 
       *.opened {
@@ -111,6 +112,7 @@
       align-self: center;
 
       @include media-breakpoint-up(lg) {
+        font-size: 20px;
         margin: 0 10px;
       }
 
