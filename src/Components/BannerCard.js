@@ -2,7 +2,8 @@ import React from 'react';
 
 class BannerCard extends React.Component {
     state = {
-        cardNumber: this.props.id
+        cardNumber: this.props.id,
+        animating: false
     };
 
     onCardChange = () => {
@@ -10,14 +11,22 @@ class BannerCard extends React.Component {
 
         const bannerText = this.props.textHolderRef;
 
-        bannerText.classList.add('animate');
+        if(this.state.animating === false) {
+            this.setState({animating: true});
 
-        setTimeout(() => {
-            bannerText.innerHTML = this.props.bannerText;
-        }, 500);
-        setTimeout(() => {
-            bannerText.classList.remove('animate');
-        }, 1500);
+            bannerText.classList.add('animate');
+
+            setTimeout(() => {
+                bannerText.innerHTML = this.props.bannerText;
+            }, 500);
+            setTimeout(() => {
+                bannerText.classList.remove('animate');
+            }, 1500);
+            setTimeout(() => {
+                this.setState({animating: false})
+            }, 1500);
+        }
+
 
     };
 
@@ -27,7 +36,7 @@ class BannerCard extends React.Component {
         return (
             <div
                 className={this.props.class}
-                onClick={(e) => {
+                onClick={() => {
                     this.onCardChange();
                 }}
             >
