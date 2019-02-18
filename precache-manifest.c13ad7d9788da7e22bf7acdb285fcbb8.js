@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/Shopping-app/static/media/shoes-o.5f77e987.jpg"
   },
   {
-    "revision": "ee6a395ce9df4068cdb3",
+    "revision": "99ef91b3ea936498554c",
     "url": "/Shopping-app/static/css/main.ac8c9418.chunk.css"
   },
   {
@@ -32,8 +32,8 @@ self.__precacheManifest = [
     "url": "/Shopping-app/static/media/bag-o.430dc142.jpg"
   },
   {
-    "revision": "ee6a395ce9df4068cdb3",
-    "url": "/Shopping-app/static/js/main.ee6a395c.chunk.js"
+    "revision": "99ef91b3ea936498554c",
+    "url": "/Shopping-app/static/js/main.99ef91b3.chunk.js"
   },
   {
     "revision": "96e777804e75ce7aa8200b1e0a7c4635",
@@ -64,7 +64,7 @@ self.__precacheManifest = [
     "url": "/Shopping-app/static/media/angel.4e4511f3.jpg"
   },
   {
-    "revision": "f0cd14bb59573209a1e590ed5a3d7073",
+    "revision": "9e05ba261bf1e4c31f89c20c21ef21fc",
     "url": "/Shopping-app/index.html"
   }
 ];
