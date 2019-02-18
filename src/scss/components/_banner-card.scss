@@ -20,6 +20,7 @@
   padding: 15px;
   width: 90%;
   background: #fff;
+  transition: transform 500ms;
 
   @include media-breakpoint-up(md) {
     flex: 1 1 auto;
@@ -28,6 +29,14 @@
     &:not(:last-child) {
       margin-right: 3px;
     }
+  }
+
+  &.selected {
+    transform: translateY(-50px);
+  }
+
+  &:hover {
+    cursor: pointer;
   }
 
   & + & {
