@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import {removeProduct} from "../Actions";
 
 class Bagitem extends Component {
     constructor(props) {
@@ -10,16 +11,24 @@ class Bagitem extends Component {
         }
     }
 
-    deleteProduct() {
-        console.log(`${this.props.name} would be deleted`)
-    }
-
     increaseQuantity() {
         this.setState({quantity: this.state.quantity + 1})
     }
 
     decreaseQuantity() {
         this.setState({quantity: this.state.quantity - 1})
+    }
+
+    animateNumber() {
+        const amountNumber = this.props.amountNumberRef.current;
+
+        console.log(amountNumber);
+        amountNumber.classList.add('shrink');
+
+        setTimeout(function(){
+            amountNumber.classList.remove('shrink');
+        }, 200)
+
     }
 
     render() {
@@ -58,7 +67,10 @@ class Bagitem extends Component {
                             </div>
                             <div
                                 className='[ col-sm-4 col-md-3 ] bag-item__delete-product'
-                                onClick={() => this.deleteProduct()}
+                                onClick={() => {
+                                    this.props.removeProduct(this.props.name);
+                                    this.animateNumber();
+                                }}
                             >
                                 x
                             </div>
@@ -71,9 +83,8 @@ class Bagitem extends Component {
 
 const mapStateToProps = state => {
     return {
-        number: state.addProductToBag,
-        itemsInBag: state.itemsInBag,
+        productsInBag: state.productsInBag,
     };
 };
 
-export default connect(mapStateToProps)(Bagitem);
+export default connect(mapStateToProps, {removeProduct})(Bagitem);

@@ -20,25 +20,40 @@ const toggleBagView = () => {
 };
 
 class Bag extends Component {
+    constructor(props) {
+        super(props);
+
+        this.amountNumber = React.createRef();
+    }
+
     generateBagItems() {
         const itemsInCart = this.props.productsInBag;
 
         return itemsInCart.map( item => {
             return (
-                <Bagitem key={item.props.name} name={item.props.name} img={item.props.img} quantity={1} price={item.props.price} />
+                <Bagitem key={item.props.name} name={item.props.name} img={item.props.img} quantity={1} price={item.props.price} amountNumberRef={this.amountNumber} />
             )
         })
     }
 
+    componentDidUpdate = () => {
+        const amountNumber = this.amountNumber.current;
+
+        amountNumber.classList.add('blink');
+
+        setTimeout(function(){
+            amountNumber.classList.remove('blink');
+        }, 200)
+    };
+
     render() {
-        console.log(this.props);
 
         const amountOfProducts = this.props.productsInBag.length;
         if (amountOfProducts === 0) {
             return (
                 <div className='bag-container'>
                     <div className="container position-relative">
-                        <span className='bag-items-counter'>
+                        <span ref={this.amountNumber} className='bag-items-counter'>
                             0
                         </span>
                         <img
@@ -61,7 +76,7 @@ class Bag extends Component {
             return (
                 <div className='bag-container'>
                     <div className="container position-relative">
-                <span className='bag-items-counter'>
+                <span ref={this.amountNumber} className='bag-items-counter'>
                     {amountOfProducts}
                 </span>
                         <img
@@ -87,7 +102,6 @@ class Bag extends Component {
 }
 
 const mapStateToProps = state => {
-    console.log(state);
     return {
         productsInBag: state.productsInBag,
     };

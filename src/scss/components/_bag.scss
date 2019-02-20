@@ -37,16 +37,24 @@
   height: 30px;
   width: 30px;
   padding: 10px;
-  background-image: linear-gradient(to right, #e16b2c, #eba012);
+  background: linear-gradient(to right, #e16b2c, #eba012);
   line-height: 10px;
   text-align: center;
   color: #fff;
   font-size: 12px;
-  transition: 0.4s ease-in;
+  transition: 0.2s ease-in;
 
   @include media-breakpoint-up(lg) {
     font-size: 14px;
     top: -38px;
+  }
+
+  &.blink {
+    transform: scale(1.1);
+  }
+
+  &.shrink {
+    transform: scale(0.9);
   }
 }
 

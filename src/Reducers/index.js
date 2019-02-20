@@ -65,15 +65,18 @@ const allProducts = () => {
     }
 };
 
-const addProduct = (itemsInBag = [], action) => {
+const handleProducts = (itemsInBag = [], action) => {
     if (action.type === 'ADD_PRODUCT') {
         return [...itemsInBag, action.payload];
+    } else if (action.type === 'REMOVE_PRODUCT') {
+        return itemsInBag.filter(product => product.props.name !== action.payload);
     }
 
     return itemsInBag;
 };
 
+
 export default combineReducers({
     allProducts: allProducts,
-    productsInBag: addProduct,
+    productsInBag: handleProducts,
 });
