@@ -21,7 +21,7 @@ const toggleBagView = () => {
 
 class Bag extends Component {
     generateBagItems() {
-        const itemsInCart = this.props.itemsInBag;
+        const itemsInCart = this.props.productsInBag;
 
         return itemsInCart.map( item => {
             return (
@@ -31,8 +31,10 @@ class Bag extends Component {
     }
 
     render() {
-        const number = this.props.number;
-        if (!number) {
+        console.log(this.props);
+
+        const amountOfProducts = this.props.productsInBag.length;
+        if (amountOfProducts === 0) {
             return (
                 <div className='bag-container'>
                     <div className="container position-relative">
@@ -60,7 +62,7 @@ class Bag extends Component {
                 <div className='bag-container'>
                     <div className="container position-relative">
                 <span className='bag-items-counter'>
-                    {number}
+                    {amountOfProducts}
                 </span>
                         <img
                             onClick={() => {
@@ -85,9 +87,9 @@ class Bag extends Component {
 }
 
 const mapStateToProps = state => {
+    console.log(state);
     return {
-        number: state.addProductToBag,
-        itemsInBag: state.itemsInBag,
+        productsInBag: state.productsInBag,
     };
 };
 

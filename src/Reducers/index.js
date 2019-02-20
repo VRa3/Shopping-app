@@ -65,30 +65,15 @@ const allProducts = () => {
     }
 };
 
-const selectProductReducer = (addProduct = null, action) => {
-    if (action.type === 'SELECT_PRODUCT') {
-        return action.payload;
-    }
-
-    return addProduct;
-};
-
-const itemsInBagArray = [];
-const itemsInBag = () => {
-  return itemsInBagArray;
-};
-
-const addProductToBag = (addProduct = null, action) => {
+const addProduct = (itemsInBag = [], action) => {
     if (action.type === 'ADD_PRODUCT') {
-        return itemsInBagArray.push(action.payload);
+        return [...itemsInBag, action.payload];
     }
 
-    return addProduct;
+    return itemsInBag;
 };
 
 export default combineReducers({
     allProducts: allProducts,
-    selectedProduct: selectProductReducer,
-    itemsInBag: itemsInBag,
-    addProductToBag: addProductToBag,
+    productsInBag: addProduct,
 });
