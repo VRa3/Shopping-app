@@ -4,10 +4,14 @@ import BannerCard from './BannerCard';
 class Accordion extends Component {
     state = {
         selectedCard: null,
+        isAnimating: false,
     };
 
-    onCardChange = card => {
-      this.setState({selectedCard: card});
+    onCardChange = (card, isAnimating) => {
+      this.setState({
+          selectedCard: card,
+          isAnimating: isAnimating,
+      });
     };
 
     render() {
@@ -32,6 +36,8 @@ class Accordion extends Component {
                     bannerText: 'This text is coming from third card',
                 }
             ];
+
+            console.log(this.state.isAnimating);
 
             return cardsContent.map(card => {
                 if (this.state.selectedCard === card.id) {

@@ -32,22 +32,13 @@
     margin-left: auto;
     width: 35%;
     color: #fff;
-
-    &.animate {
-      animation-name: text-holder__slide-in--mobile;
-      animation-duration: 1.5s;
-      animation-timing-function: ease-out;
-      animation-iteration-count: 1;
-      animation-play-state: running;
-    }
+    transition: transform 1s;
 
     @include media-breakpoint-up(md) {
       width: 50%;
 
-      &.animate {
-        animation-name: text-holder__slide-in;
-        animation-duration: 1.5s;
-        animation-timing-function: ease;
+      &.slide-down {
+        transform: translateY(500px);
       }
     }
     @include media-breakpoint-up(lg) {
