@@ -19,25 +19,23 @@ class Accordion extends Component {
 
             const cardsContent = [
                 {
-                    id: 0,
+                    id: 1,
                     heading: 'Heading One',
                     caption: 'Lorem ipsum dolor sit amet',
                     bannerText: 'This text is coming from first card',
                 },
                 {
-                    id: 1,
+                    id: 2,
                     heading: 'Heading Two',
                     caption: 'Caption text',
                     bannerText: 'This text is coming from second card',
                 },
                 {
-                    id: 2,
+                    id: 3,
                     heading: 'Heading Three',
                     bannerText: 'This text is coming from third card',
                 }
             ];
-
-            console.log(this.state.isAnimating);
 
             return cardsContent.map(card => {
                 if (this.state.selectedCard === card.id) {

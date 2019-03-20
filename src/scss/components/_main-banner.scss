@@ -34,10 +34,14 @@
     color: #fff;
     transition: transform 1s;
 
+    &.slide {
+      transform: translateX(300px);
+    }
+
     @include media-breakpoint-up(md) {
       width: 50%;
 
-      &.slide-down {
+      &.slide {
         transform: translateY(500px);
       }
     }

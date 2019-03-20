@@ -6,15 +6,13 @@ class BannerCard extends React.Component {
         animating: false
     };
 
-
     onCardChange = () => {
         const {cardNumber, animating} = this.state;
         const bannerText = this.props.textHolderRef;
-        this.props.onCardChange(cardNumber, animating);
-
 
         const startAnimation = (cb) => {
-            bannerText.classList.add('slide-down');
+            bannerText.classList.add('slide');
+            this.setState({animating: true});
 
             setTimeout(function(){
                 cb();
@@ -28,30 +26,18 @@ class BannerCard extends React.Component {
         };
 
         const endAnimation = (cb) => {
-            bannerText.classList.remove('slide-down');
+            bannerText.classList.remove('slide');
         };
 
-        const changeState = () => {
-            // this.setState({animating: false});
-        }
-
-        // startAnimation(function(){
-        //     handleTextChange(function(){
-        //         endAnimation()
-        //     })
-        // });
-
-        startAnimation(() => {
-            this.setState({animating: true});
-            handleTextChange(() => {
-                endAnimation(() => {
-                    this.setState({animating: false});
-
+        if (!bannerText.classList.contains('slide')) {
+            this.props.onCardChange(cardNumber, animating);
+            startAnimation(() => {
+                handleTextChange(() => {
+                    endAnimation(() => {
+                    })
                 })
-            })
-        });
-
-
+            });
+        }
     };
 
     render() {
