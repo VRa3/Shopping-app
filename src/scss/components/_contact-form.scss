@@ -1,4 +1,10 @@
 .contact-form {
+  transition: opacity 1s;
+
+  &.fade-out {
+    opacity: 0;
+  }
+
   &__send-btn {
     padding: 9px;
     min-width: 120px;
@@ -10,6 +16,15 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-position: 5% 5%;
+    }
+
+    &--hidden {
+      opacity: 0;
+      transition: opacity 5s;
+    }
+
+    &.fade-in {
+      opacity: 1;
     }
   }
 
@@ -40,10 +55,15 @@
     margin: 0;
     padding: 9px;
     background: #fff;
+    font-weight: bold;
     color: setColor(gray, base);
     img {
       margin-right: 9px;
       max-width: 30px;
     }
+  }
+
+  .form-group--small-margin {
+    margin-bottom: 0.75rem;
   }
 }
