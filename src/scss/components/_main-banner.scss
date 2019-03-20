@@ -7,22 +7,41 @@
   background-position: 50% top;
   transition: transform 500ms;
 
-  @include media-breakpoint-up(xl) {
+  @include media-breakpoint-up(lg) {
     padding-top: 0;
-    height: calc(100vh - 146px);
+    height: calc(100vh - 129px);
     background-size: cover;
     background-position: unset;
   }
 
+  &--01 {
+    display: none;
+    width: 65%;
+    flex-grow: 1;
+    background-image: url('../static/slider/art-finger.jpg');
+
+    @include media-breakpoint-up(md) {
+      display: block;
+      background-size: cover;
+      background-position: 100% 100%;
+    }
+    @include media-breakpoint-up(xl) {
+      background-position: 100% 100%;
+
+    }
+  }
+
+
+
   &__container {
-    display: flex;
-    align-items: center;
+    overflow: hidden;
     position: absolute;
     top: 0;
-    right: 0;
-    overflow: hidden;
-    width: 100%;
+    left: 50%;
+    display: flex;
+    align-items: center;
     height: 100%;
+    transform: translateX(-50%);
   }
 
   &__text-holder {
@@ -30,16 +49,18 @@
     top: 0;
     left: 0;
     margin-left: auto;
-    width: 35%;
-    color: #fff;
+    width: 45%;
     transition: transform 1s;
+    text-align: justify;
+    color: #fff;
 
     &.slide {
       transform: translateX(300px);
     }
 
     @include media-breakpoint-up(md) {
-      width: 50%;
+      text-shadow: 0 0 10px black;
+      font-size: 1.5rem;
 
       &.slide {
         transform: translateY(500px);
@@ -47,6 +68,9 @@
     }
     @include media-breakpoint-up(lg) {
       font-size: 2.5rem;
+    }
+    @include media-breakpoint-up(xl) {
+      width: 45%;
     }
   }
 }

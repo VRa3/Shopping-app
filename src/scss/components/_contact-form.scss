@@ -1,0 +1,49 @@
+.contact-form {
+  &__send-btn {
+    padding: 9px;
+    min-width: 120px;
+    line-height: 1;
+
+    span {
+      font-weight: bold;
+      background-image: url('../static/slider/art-finger.jpg');
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-position: 5% 5%;
+    }
+  }
+
+  &__or-separator {
+    position: relative;
+    text-align: center;
+
+    span {
+
+      &::after, &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        display: block;
+        transform: translateY(-50%);
+        border-bottom: 5px dotted setColor(gray, light);
+        width: 42%;
+        height: 3px;
+      }
+
+      &::after {
+        right: 0;
+      }
+    }
+  }
+
+  &__log-in {
+    margin: 0;
+    padding: 9px;
+    background: #fff;
+    color: setColor(gray, base);
+    img {
+      margin-right: 9px;
+      max-width: 30px;
+    }
+  }
+}
