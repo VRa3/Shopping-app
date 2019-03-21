@@ -27,6 +27,10 @@
     &.fade-in {
       opacity: 1;
     }
+    
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   &__or-separator {

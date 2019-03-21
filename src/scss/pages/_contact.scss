@@ -34,6 +34,13 @@
     }
   }
 
+  .form-error {
+    h2 {
+      display: inline-block;
+      color: setColor(font, orange);
+    }
+  }
+
   .form-control {
     display: inline-block;
     border-radius: 0;
@@ -41,9 +48,12 @@
 
     &__wrapper {
       position: relative;
-      z-index: 10;
       display: flex;
       align-items: center;
+
+      @include media-breakpoint-up(md) {
+        z-index: 10;
+      }
     }
 
     &__icon {
@@ -80,18 +90,25 @@
 
     &__pop-up {
       position: absolute;
-      z-index: -10;
+      z-index: 100;
       top: 0;
-      left: calc(100% + 15px);
+      right: 38px;
       opacity: 0;
       padding: 7px;
-      min-width: 150px;
-      width: 200%;
-      max-width: 350px;
-      max-height: 62px;
+      width: 50%;
+      border: 3px solid setColor(font, orange);
       background: #fff;
-
       transition: opacity 1s;
+
+      @include media-breakpoint-up(md) {
+        z-index: -10;
+        left: calc(100% + 15px);
+        border-width: 2px;
+        min-width: 150px;
+        width: 200%;
+        max-width: 350px;
+        max-height: 62px;
+      }
 
       &:hover {
         cursor: default;
