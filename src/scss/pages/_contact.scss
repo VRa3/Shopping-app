@@ -40,6 +40,8 @@
     width: calc(100% - 38px);
 
     &__wrapper {
+      position: relative;
+      z-index: 10;
       display: flex;
       align-items: center;
     }
@@ -61,6 +63,38 @@
 
       &--correct {
         border-color: setColor(font, light-green);
+
+        ~ .form-control__pop-up {
+          display: none;
+        }
+      }
+
+      &:hover {
+        cursor: help;
+
+        ~ .form-control__pop-up {
+          opacity: 1;
+        }
+      }
+    }
+
+    &__pop-up {
+      position: absolute;
+      z-index: -10;
+      top: 0;
+      left: calc(100% + 15px);
+      opacity: 0;
+      padding: 7px;
+      min-width: 150px;
+      width: 200%;
+      max-width: 350px;
+      max-height: 62px;
+      background: #fff;
+
+      transition: opacity 1s;
+
+      &:hover {
+        cursor: default;
       }
     }
   }
