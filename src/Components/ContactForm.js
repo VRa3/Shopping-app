@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
-import facebook from "../static/icons/facebook.png";
+
+import facebook from '../static/icons/facebook.png';
+
+import NameChecker from './contact-form/NameChecker';
+import MailChecker from './contact-form/MailChecker';
+import TextareaChecker from './contact-form/TextareaChecker';
 
 class ContactForm extends Component {
     constructor(props) {
@@ -7,45 +12,67 @@ class ContactForm extends Component {
 
         this.FormRef = React.createRef();
         this.SendedBtnRef = React.createRef();
-        this.NameValidationRef = React.createRef();
-        this.MailValidationRef = React.createRef();
-        this.TextValidationRef = React.createRef();
+        this.ErrorContainer = React.createRef();
 
         this.state = {
             msgIsSent: false,
+            errorExisting: false,
+            nameValueIsGood: false,
+            mailValueIsGood: false,
+            textValueIsGood: false,
         }
     }
 
-    CheckForm = e => {
-        this.setState({})
+    validateNameInput = e => {
+        if(e.target.value.length >= 3) {
+            this.setState({nameValueIsGood: true});
+        } else {
+            this.setState({nameValueIsGood: false});
+        }
+    };
+
+    validateMailInput = e => {
+        if(e.target.value.indexOf('@') > 0 &&
+            ((e.target.value.indexOf('.com') > 0 ) || e.target.value.indexOf('.pl') > 0)) {
+            this.setState({mailValueIsGood: true});
+        } else {
+            this.setState({mailValueIsGood: false});
+        }
+    };
+
+    validateTextInput = e => {
+        if(e.target.value.length >= 20) {
+            this.setState({textValueIsGood: true});
+        } else {
+            this.setState({textValueIsGood: false});
+        }
+    };
+
+    sendForm = (e) => {
+        e.preventDefault();
+        const form = this.FormRef.current;
+
+        form.classList.add('fade-out');
+
+        setTimeout(()=>{
+            form.style.display = 'none';
+            this.setState({msgIsSent: true});
+        }, 1000)
     };
 
     componentDidUpdate() {
         const button = this.SendedBtnRef.current;
+        const {msgIsSent} = this.state;
 
-        setTimeout(()=>{
-            button.classList.add('fade-in');
-        }, 100)
+        if (msgIsSent) {
+            setTimeout(()=>{
+                button.classList.add('fade-in');
+            }, 100)
+        }
     }
 
     render() {
         const {msgIsSent} = this.state;
-
-        const sendForm = (e) => {
-            e.preventDefault();
-
-            const form = this.FormRef.current;
-            const mail = this.MailValidationRef.current;
-
-            form.classList.add('fade-out');
-
-            setTimeout(()=>{
-                form.style.display = 'none';
-                this.setState({msgIsSent: true});
-            }, 1000)
-        };
-
-
 
         if(msgIsSent) {
             return (
@@ -68,38 +95,49 @@ class ContactForm extends Component {
                     <label htmlFor='contactName'>
                         Just name
                     </label>
-                    <input type='text'
-                           ref={this.NameValidationRef}
-                           className='form-control'
-                           id='contactName'
-                           onChange={this.checkForm}
-                           placeholder='Johnny'/>
+                    <div className="form-control__wrapper">
+                        <input type='text'
+                               className='form-control'
+                               id='contactName'
+                               onChange={this.validateNameInput}
+                               placeholder='Johnny'
+                        />
+                        <NameChecker correct={this.state.nameValueIsGood}/>
+                    </div>
                 </div>
                 <div className='form-group'>
                     <label htmlFor='exampleFormControlInput1'>
                         Email address
                     </label>
-                    <input type='email'
-                           ref={this.MailValidationRef}
-                           className='form-control'
-                           id='exampleFormControlInput1'
-                           placeholder='name@example.com'/>
+                    <div className="form-control__wrapper">
+                        <input type='email'
+                               className='form-control'
+                               id='exampleFormControlInput1'
+                               onChange={this.validateMailInput}
+                               placeholder='name@example.com'
+                        />
+                        <MailChecker correct={this.state.mailValueIsGood}/>
+                    </div>
                 </div>
                 <div className='form-group'>
                     <label htmlFor='exampleFormControlTextarea1'>
                         What's on your mind?
                     </label>
-                    <textarea className='form-control'
-                              ref={this.TextValidationRef}
-                              id='exampleFormControlTextarea1'
-                              rows='3'
-                    />
+                    <div className="form-control__wrapper">
+                        <textarea className='form-control'
+                                  id='exampleFormControlTextarea1'
+                                  onChange={this.validateTextInput}
+                                  rows='3'
+                        />
+                        <TextareaChecker correct={this.state.textValueIsGood}/>
+                    </div>
+
                 </div>
 
-                <div className="form-group form-group--small-margin">
+                <div className='form-group form-group--small-margin'>
                     <button
                         className='contact-form__send-btn'
-                        onClick={(e) => sendForm(e)}
+                        onClick={(e) => this.sendForm(e)}
                     >
                             <span>
                                 Send?
@@ -113,9 +151,12 @@ class ContactForm extends Component {
                             </span>
                 </div>
                 <p className='contact-form__log-in'>
-                    <img src={facebook} alt=""/>
+                    <img src={facebook} alt=''/>
                     Live chat via facebook
                 </p>
+                <div ref={this.ErrorContainer}>
+
+                </div>
             </form>
         )
     }

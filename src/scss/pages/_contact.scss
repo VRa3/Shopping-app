@@ -35,6 +35,33 @@
   }
 
   .form-control {
+    display: inline-block;
     border-radius: 0;
+    width: calc(100% - 38px);
+
+    &__wrapper {
+      display: flex;
+      align-items: center;
+    }
+
+    &__icon {
+      display: inline-block;
+      margin-left: 8px;
+      border-radius: 50%;
+      border: 2px solid setColor(font, orange);
+      padding: 5px;
+      width: 30px;
+      height: 30px;
+      background: #fff;
+      transition: border 1s;
+      line-height: 1;
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+
+      &--correct {
+        border-color: setColor(font, light-green);
+      }
+    }
   }
 }

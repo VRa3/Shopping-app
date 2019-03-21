@@ -1,0 +1,17 @@
+.errors-popup {
+  //position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 110%;
+  padding: 15px;
+  border-radius: 5px;
+  min-width: 150px;
+  width: 100%;
+  max-width: 300px;
+  background: #fff;
+  color: red;
+
+  p {
+    margin-bottom: 0;
+  }
+}
