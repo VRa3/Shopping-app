@@ -85,7 +85,6 @@ class ContactForm extends Component {
 
     render() {
         const {msgIsSent, validationPassed} = this.state;
-        console.log(validationPassed);
 
         if(msgIsSent) {
             return (

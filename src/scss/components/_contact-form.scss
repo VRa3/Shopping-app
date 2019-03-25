@@ -62,6 +62,11 @@
     background: #fff;
     font-weight: bold;
     color: setColor(gray, base);
+    
+    &:hover {
+      cursor: not-allowed;
+    }
+    
     img {
       margin-right: 9px;
       max-width: 30px;

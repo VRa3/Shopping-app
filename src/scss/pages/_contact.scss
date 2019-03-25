@@ -93,12 +93,14 @@
         cursor: help;
 
         ~ .form-control__pop-up {
+          visibility: visible;
           opacity: 1;
         }
       }
     }
 
     &__pop-up {
+      visibility: hidden;
       position: absolute;
       z-index: 100;
       top: 0;
@@ -108,7 +110,7 @@
       width: 50%;
       border: 3px solid setColor(font, orange);
       background: #fff;
-      transition: opacity 1s;
+      transition: opacity 1s, visibility 1s;
 
       @include media-breakpoint-up(md) {
         z-index: -10;
