@@ -110,7 +110,7 @@
       width: 50%;
       border: 3px solid setColor(font, orange);
       background: #fff;
-      transition: opacity 1s, visibility 1s;
+      transition: opacity 0.5s, visibility 0.5s;
 
       @include media-breakpoint-up(md) {
         z-index: -10;

@@ -42,23 +42,7 @@
       &:hover {
         cursor: pointer;
         border-radius: 0;
-        transform: rotate(180deg) scale(1.25);
-      }
-    }
-
-    &.addedAnimation {
-      background-image: linear-gradient(to right, #0f6b0b, #3ac913);
-      transition: transform 1.4s, opacity 0.5s;
-      border-radius: 0;
-      transform: translateY(-100px);
-      opacity: 0;
-
-      @include media-breakpoint-up(lg) {
-        background-image: linear-gradient(to right, #0f6b0b, #3ac913);
-        transition: transform 1.4s, opacity 0.5s;
-        border-radius: 0;
-        transform: translateY(-100px) rotate(180deg);
-        opacity: 0;
+        transform: rotate(180deg);
       }
     }
 
@@ -66,6 +50,7 @@
       border-radius: 0;
       background-image: linear-gradient(to right, #0f6b0b, #3ac913);
       transform: translate(0);
+      transition: none;
       opacity: 1;
     }
 
