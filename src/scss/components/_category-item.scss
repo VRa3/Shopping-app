@@ -46,7 +46,7 @@
       }
     }
 
-    &.added {
+    &.addedAnimation {
       background-image: linear-gradient(to right, #0f6b0b, #3ac913);
       transition: transform 1.4s, opacity 0.5s;
       border-radius: 0;
@@ -60,6 +60,18 @@
         transform: translateY(-100px) rotate(180deg);
         opacity: 0;
       }
+    }
+
+    &.added {
+      border-radius: 0;
+      background-image: linear-gradient(to right, #0f6b0b, #3ac913);
+      transform: translate(0);
+      opacity: 1;
+    }
+
+    svg {
+      max-width: 10px;
+      width: 100%;
     }
   }
 

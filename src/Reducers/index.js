@@ -67,6 +67,9 @@ const allProducts = () => {
 
 const handleProducts = (itemsInBag = [], action) => {
     if (action.type === 'ADD_PRODUCT') {
+        if (itemsInBag.find(product => product.props.name === action.payload.props.name)) {
+            return itemsInBag;
+        }
         return [...itemsInBag, action.payload];
     } else if (action.type === 'REMOVE_PRODUCT') {
         return itemsInBag.filter(product => product.props.name !== action.payload);
