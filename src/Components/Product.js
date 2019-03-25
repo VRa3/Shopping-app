@@ -1,33 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {addProduct} from "../Actions";
-import Checkmark from './contact-form/checkmark';
-
+import AddButton from './AddButton';
 
 class Product extends Component {
-    state = {
-        isAdded: false,
-    };
-
-    animateElement = element => {
-        element.classList.add('addedAnimation');
-        setTimeout(() => {element.classList.add('added')}, 1400)
-    };
-
-    checkElement = () => {
-        const {productsInBag, name} = this.props;
-        if (productsInBag.find(product => product.props.name === name)) {
-            console.log(name);
-            this.setState({isAdded: true});
-        }
-    };
-
-    componentDidMount() {
-        this.checkElement();
-    }
-
     render() {
-        console.log(this.state.isAdded);
         return (
             <div className="[ col-md-4 ]">
                 <div className="category-item">
@@ -44,16 +21,11 @@ class Product extends Component {
                     <div className="category-item__price-tag">
                         {this.props.price}
                     </div>
-                    <button
-                        onClick={(event) => {
-                            this.props.addProduct(this);
-                            this.animateElement(event.target);
-                            }
-                        }
-                        className={this.state.isAdded ? 'category-item__button added' : 'category-item__button'}
-                    >
-                        {this.state.isAdded ? <Checkmark weight='bold' /> : '+'}
-                    </button>
+                    <AddButton
+                        addProduct={this.props.addProduct}
+                        productsInBag={this.props.productsInBag}
+                        reference={this}
+                    />
                 </div>
             </div>
         );

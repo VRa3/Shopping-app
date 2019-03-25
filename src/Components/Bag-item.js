@@ -22,7 +22,6 @@ class Bagitem extends Component {
     animateNumber() {
         const amountNumber = this.props.amountNumberRef.current;
 
-        console.log(amountNumber);
         amountNumber.classList.add('shrink');
 
         setTimeout(function(){
