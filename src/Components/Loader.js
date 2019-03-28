@@ -21,20 +21,30 @@ class Loader extends React.Component {
         flower, bag, shoes, pad, cup, glitter, jewelry, brilliant, perfum, contactBg
     ];
 
+    counter = 0;
+
+    loadChecker = (i) => {
+        const images = this.imagesArr;
+
+        this.counter++;
+
+        if(i === (images.length -1)) {
+            setTimeout(()=>{
+                this.setState({loading: false})
+            }, 1000)
+        }
+    };
+
     generateImages = () => {
         const images = this.imagesArr;
 
         return images.map((img, i) => {
-            if(i === (images.length - 1)) {
-                setTimeout(() => {
-                    this.setState({loading: false})
-                }, 1000)
-            }
             return(
                 <img
                     src={img}
                     alt='test'
                     key={i}
+                    onLoad={this.loadChecker(i)}
                 />
             )
         })
