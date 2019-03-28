@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './scss/vendors/bootstrap/_bootstrap.scss';
 import './scss/_main.scss';
+import Loader from './Components/Loader';
 import Navbar from './Components/Navbar';
 import Homepage from './Components/Homepage';
 import Fashion from './Components/Fashion';
@@ -13,10 +14,12 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 const baseUrl = process.env.PUBLIC_URL;
 
 class App extends Component {
-  render() {
+    render() {
     return (
           <Router>
               <div className="App">
+                  <Loader/>
+
                   <Navbar ulItems={[
                       'About Us',
                       'Fashion',
@@ -39,7 +42,7 @@ class App extends Component {
               </div>
           </Router>
     );
-  }
+    }
 }
 
 export default App;
