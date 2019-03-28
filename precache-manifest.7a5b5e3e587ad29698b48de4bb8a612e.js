@@ -1,31 +1,19 @@
 self.__precacheManifest = [
   {
-    "revision": "5f77e9877d4042e15a39c7cf1d47ad4a",
-    "url": "/Shopping-app/static/media/shoes-o.5f77e987.jpg"
+    "revision": "bc2b937e94eafb4c0992cfce47d8a14c",
+    "url": "/Shopping-app/static/media/glitter.bc2b937e.jpg"
   },
   {
-    "revision": "a14b62684cbdaec5150b",
-    "url": "/Shopping-app/static/css/main.b48d4557.chunk.css"
+    "revision": "8587bc520b66fa217d87",
+    "url": "/Shopping-app/static/css/main.a77e9359.chunk.css"
   },
   {
-    "revision": "af213f20c93c6fd9cce7",
-    "url": "/Shopping-app/static/js/1.af213f20.chunk.js"
+    "revision": "03d64d177814a7604807",
+    "url": "/Shopping-app/static/js/1.03d64d17.chunk.js"
   },
   {
     "revision": "15c9b73f50d71035b48a",
     "url": "/Shopping-app/static/js/runtime~main.15c9b73f.js"
-  },
-  {
-    "revision": "0d7814df1d0f7f1d147e8ca77f316dbb",
-    "url": "/Shopping-app/static/media/shop-bag.0d7814df.png"
-  },
-  {
-    "revision": "f16073bfc430f7fde719dd42ab625d6e",
-    "url": "/Shopping-app/static/media/chevron-double-down.f16073bf.svg"
-  },
-  {
-    "revision": "9f39489db9a554d0af8b72e544a24b34",
-    "url": "/Shopping-app/static/media/facebook.9f39489d.png"
   },
   {
     "revision": "dc5a299fa1a4b69c8672520ed53df7e7",
@@ -36,8 +24,8 @@ self.__precacheManifest = [
     "url": "/Shopping-app/static/media/bag-o.430dc142.jpg"
   },
   {
-    "revision": "a14b62684cbdaec5150b",
-    "url": "/Shopping-app/static/js/main.a14b6268.chunk.js"
+    "revision": "5f77e9877d4042e15a39c7cf1d47ad4a",
+    "url": "/Shopping-app/static/media/shoes-o.5f77e987.jpg"
   },
   {
     "revision": "96e777804e75ce7aa8200b1e0a7c4635",
@@ -48,8 +36,8 @@ self.__precacheManifest = [
     "url": "/Shopping-app/static/media/cup.2ec37d0e.jpg"
   },
   {
-    "revision": "bc2b937e94eafb4c0992cfce47d8a14c",
-    "url": "/Shopping-app/static/media/glitter.bc2b937e.jpg"
+    "revision": "8587bc520b66fa217d87",
+    "url": "/Shopping-app/static/js/main.8587bc52.chunk.js"
   },
   {
     "revision": "c12a90d1b28f5b61ae22dacde6224d48",
@@ -64,15 +52,27 @@ self.__precacheManifest = [
     "url": "/Shopping-app/static/media/perfum.ad748e7c.jpg"
   },
   {
+    "revision": "0d7814df1d0f7f1d147e8ca77f316dbb",
+    "url": "/Shopping-app/static/media/shop-bag.0d7814df.png"
+  },
+  {
     "revision": "3f4eb6f8c65d810ab157a819aaf23a38",
     "url": "/Shopping-app/static/media/art-finger.3f4eb6f8.jpg"
+  },
+  {
+    "revision": "f16073bfc430f7fde719dd42ab625d6e",
+    "url": "/Shopping-app/static/media/chevron-double-down.f16073bf.svg"
+  },
+  {
+    "revision": "9f39489db9a554d0af8b72e544a24b34",
+    "url": "/Shopping-app/static/media/facebook.9f39489d.png"
   },
   {
     "revision": "4e4511f36daf62b59d98100ef6ac3929",
     "url": "/Shopping-app/static/media/angel.4e4511f3.jpg"
   },
   {
-    "revision": "ee08b6967cfd7366f2995cb24ffba972",
+    "revision": "88baf0e52a377d7d8566e14a2fc567a3",
     "url": "/Shopping-app/index.html"
   }
 ];
