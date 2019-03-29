@@ -4,12 +4,12 @@ self.__precacheManifest = [
     "url": "/Shopping-app/static/media/glitter.bc2b937e.jpg"
   },
   {
-    "revision": "2dc922733cd8930552fa",
-    "url": "/Shopping-app/static/css/main.fb31caf3.chunk.css"
+    "revision": "562dc11c42ebe78557aa",
+    "url": "/Shopping-app/static/css/main.cd197460.chunk.css"
   },
   {
-    "revision": "2759af2afe1d96b4f965",
-    "url": "/Shopping-app/static/js/1.2759af2a.chunk.js"
+    "revision": "03d64d177814a7604807",
+    "url": "/Shopping-app/static/js/1.03d64d17.chunk.js"
   },
   {
     "revision": "15c9b73f50d71035b48a",
@@ -36,8 +36,8 @@ self.__precacheManifest = [
     "url": "/Shopping-app/static/media/cup.2ec37d0e.jpg"
   },
   {
-    "revision": "2dc922733cd8930552fa",
-    "url": "/Shopping-app/static/js/main.2dc92273.chunk.js"
+    "revision": "562dc11c42ebe78557aa",
+    "url": "/Shopping-app/static/js/main.562dc11c.chunk.js"
   },
   {
     "revision": "c12a90d1b28f5b61ae22dacde6224d48",
@@ -60,10 +60,6 @@ self.__precacheManifest = [
     "url": "/Shopping-app/static/media/art-finger.3f4eb6f8.jpg"
   },
   {
-    "revision": "4e4511f36daf62b59d98100ef6ac3929",
-    "url": "/Shopping-app/static/media/angel.4e4511f3.jpg"
-  },
-  {
     "revision": "f16073bfc430f7fde719dd42ab625d6e",
     "url": "/Shopping-app/static/media/chevron-double-down.f16073bf.svg"
   },
@@ -72,7 +68,11 @@ self.__precacheManifest = [
     "url": "/Shopping-app/static/media/facebook.9f39489d.png"
   },
   {
-    "revision": "c0e62f5d319852cf8f64048b425737fd",
+    "revision": "4e4511f36daf62b59d98100ef6ac3929",
+    "url": "/Shopping-app/static/media/angel.4e4511f3.jpg"
+  },
+  {
+    "revision": "91ad46962c6b592a5bed08e6bfb9bafa",
     "url": "/Shopping-app/index.html"
   }
 ];
