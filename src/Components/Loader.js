@@ -31,7 +31,7 @@ class Loader extends React.Component {
         if(i === (images.length -1)) {
             setTimeout(()=>{
                 this.setState({loading: false})
-            }, 1000)
+            }, 3000)
         }
     };
 
