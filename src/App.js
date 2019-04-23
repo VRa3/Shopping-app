@@ -18,7 +18,7 @@ class App extends Component {
     return (
           <Router>
               <div className="App">
-                  <Loader/>
+                  {/*<Loader/>*/}
 
                   <Navbar ulItems={[
                       'About Us',

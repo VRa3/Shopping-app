@@ -18,7 +18,7 @@ const collapseMenuHomepage = () => {
     }
 };
 
-const collapseMenu = () => {
+const toggleMenu = () => {
     const navbarList = document.querySelector('.navbar__list');
     const body = document.querySelector('body');
     const cartWrapper = document.querySelector('#cart-wrapper');
@@ -36,6 +36,16 @@ const collapseMenu = () => {
 
 
 class Navbar extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            windowWidth: 0,
+        };
+
+        this.navbarChevron = React.createRef();
+    }
+
     generateList() {
         const list = this.props.ulItems;
 
@@ -80,7 +90,13 @@ class Navbar extends Component {
         })
     }
 
-
+    componentDidMount() {
+        window.addEventListener('resize', () => {
+            if(window.innerWidth >= 992) {
+                this.navbarChevron.current.classList.remove('opened');
+            }
+        })
+    }
 
     render() {
         return (
@@ -91,11 +107,13 @@ class Navbar extends Component {
                             Home page
                         </Link>
                         <img
-                            onClick ={() => collapseMenu()}
+                            onClick ={() => toggleMenu()}
                             src={chevron}
                             className="navbar__chevron show-on-top"
                             alt=""/>
-                        <ul className="navbar__list">
+
+                        <ul className="navbar__list"
+                            ref={this.navbarChevron}>
                             {this.generateList()}
                         </ul>
                     </nav>

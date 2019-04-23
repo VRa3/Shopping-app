@@ -75,6 +75,7 @@
       height: auto;
       opacity: 1;
       transform: none;
+      transition: none;
 
       &::before, &::after {
         content: '';
