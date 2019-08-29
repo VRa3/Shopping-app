@@ -6,6 +6,7 @@ import NameChecker from './contact-form/NameChecker';
 import MailChecker from './contact-form/MailChecker';
 import TextareaChecker from './contact-form/TextareaChecker';
 import FormChecker from './contact-form/FormChecker';
+import SendedInfo from './contact-form/SendedInfo';
 
 class ContactForm extends Component {
     constructor(props) {
@@ -66,33 +67,11 @@ class ContactForm extends Component {
         }
     };
 
-    componentDidUpdate() {
-        const button = this.SendedBtnRef.current;
-        const {msgIsSent} = this.state;
-
-        if (msgIsSent) {
-            setTimeout(()=>{
-                button.classList.add('fade-in');
-            }, 100)
-        }
-    }
-
     render() {
         const {msgIsSent, validationPassed} = this.state;
 
         if(msgIsSent) {
-            return (
-                <div>
-                    <button
-                        ref={this.SendedBtnRef}
-                        className='contact-form__send-btn contact-form__send-btn--hidden'
-                    >
-                            <span>
-                                Message sended... Thank you
-                            </span>
-                    </button>
-                </div>
-            )
+            return <SendedInfo/>;
         }
 
         return (
