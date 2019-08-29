@@ -1,17 +1,31 @@
 .navbar {
   $dark-color: #222;
+
   position: relative;
   display: flex;
   flex-direction: column;
-  color: $dark-color;
-  padding: 12px 0;
+  padding: 0;
   height: 86px;
+  color: $dark-color;
 
   @include media-breakpoint-up(lg) {
     flex-wrap: nowrap;
-    padding-top: 20px;
+    padding: 12px 0 20px 0;
     overflow: hidden;
     height: auto;
+  }
+
+  &__links-wrapper {
+    position: relative;
+    z-index: 12;
+    padding: 12px 0;
+    width: 100%;
+    background: #fff;
+    text-align: center;
+
+    @include media-breakpoint-up(lg) {
+      padding: 0;
+    }
   }
 
   &__brand-name {

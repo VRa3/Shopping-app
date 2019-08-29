@@ -103,14 +103,18 @@ class Navbar extends Component {
             <header className="header">
                 <div className="container">
                     <nav className="navbar">
-                        <Link onClick={collapseMenuHomepage()} to={baseUrl + "/"} className="navbar__brand-name show-on-top">
-                            Home page
-                        </Link>
-                        <img
-                            onClick ={() => toggleMenu()}
-                            src={chevron}
-                            className="navbar__chevron show-on-top"
-                            alt=""/>
+                        <div className="navbar__links-wrapper">
+                            <Link onClick={collapseMenuHomepage()} to={baseUrl + "/"} className="navbar__brand-name show-on-top">
+                                Home page
+                            </Link>
+
+                            <img
+                                onClick ={() => toggleMenu()}
+                                src={chevron}
+                                className="navbar__chevron show-on-top"
+                                alt=""/>
+                        </div>
+
 
                         <ul className="navbar__list"
                             ref={this.navbarChevron}>

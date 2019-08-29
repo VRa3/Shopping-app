@@ -27,7 +27,7 @@
     &.fade-in {
       opacity: 1;
     }
-    
+
     &:hover {
       cursor: pointer;
     }
@@ -57,6 +57,8 @@
   }
 
   &__log-in {
+    display: flex;
+    align-items: center;
     margin: 0;
     padding: 9px;
     background: #fff;
