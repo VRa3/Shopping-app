@@ -20,23 +20,7 @@ class FormChecker extends React.Component {
     render() {
         const {formIsGood} = this.props;
 
-        if (formIsGood === false) {
-            return (
-                <>
-                    <span ref={this.ErrorSpan} className='form-error'>
-                    <h2>
-                    But...
-                    </h2>
-                    &nbsp;you have to fill form correctly.
-                    </span>
-                </>
-            )
-        } else if (formIsGood === null) {
-            return (
-                <>
-                </>
-            )
-        } else if (formIsGood === true) {
+        const errorInformation = () => {
             return (
                 <>
                     <span ref={this.ErrorSpan} className='form-error'>
@@ -47,6 +31,13 @@ class FormChecker extends React.Component {
                     </span>
                 </>
             )
+        };
+
+
+        if (formIsGood === false) {
+            return errorInformation();
+        } else if (formIsGood === null || true) {
+            return null;
         }
     }
 }
