@@ -25,12 +25,9 @@ class ContactForm extends Component {
     }
 
     validateNameInput = e => {
-        if(e.target.value.length >= 3) {
-            this.setState({nameValueIsGood: true});
-        } else {
-            this.setState({nameValueIsGood: false});
-        }
+        e.target.value.length >= 3 ? this.setState({nameValueIsGood: true}) : this.setState({nameValueIsGood: false});
     };
+
     validateMailInput = e => {
         if(e.target.value.indexOf('@') > 0 &&
             ((e.target.value.indexOf('.com') > 0 ) || e.target.value.indexOf('.pl') > 0)) {
@@ -39,12 +36,9 @@ class ContactForm extends Component {
             this.setState({mailValueIsGood: false});
         }
     };
+
     validateTextInput = e => {
-        if(e.target.value.length >= 20) {
-            this.setState({textValueIsGood: true});
-        } else {
-            this.setState({textValueIsGood: false});
-        }
+        e.target.value.length >= 20 ? this.setState({textValueIsGood: true}) : this.setState({textValueIsGood: false});
     };
 
     sendForm = (e) => {
